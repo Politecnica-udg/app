@@ -1,0 +1,55 @@
+<div class="panel panel-info">
+	<div class="panel-heading">
+		Solicitados
+	</div>
+  	<div class="panel-body">
+    	<ul class="list-group">
+    		<?php foreach ($arr as $key => $value):?>
+          <?php if ($key != 'total'):?>
+            <a href="index.php/empresa/adiestramientos/<?= $key?>">
+            <li class="list-group-item">
+              <span class="badge"><?= $value?></span>
+              [<?= $key?>]
+            </li>
+          </a>
+          <?php else:?>
+            <li class="list-group-item">
+              <span class="badge"><?= $value?></span>
+              [<?= $key?>]
+            </li>
+          <?php endif;?>
+    			
+    		<?php endforeach;?>
+		</ul>
+  	</div>
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">Solicitar</div>
+  	<div class="panel-body">
+    	<form role="form" action="index.php/empresa/adiestramientos/" method="POST">
+  			<div class="form-group">
+    			<label>Carrera</label>
+    			<select name="carre" class="form-control">
+    				<?php foreach ($arr as $key => $value):?>
+              <?php if ($key != 'total'):?>
+    					 <option value="<?=$key?>">[<?=$key?>]</option>
+              <?php endif;?>
+    				<?php endforeach;?>
+				</select>
+  			</div>
+  			<div class="form-group">
+    			<label for="actividad">Actividad a realisar</label>
+   				<textarea class="form-control" name="act" rows="3"></textarea>
+  			</div>
+  			<div class="form-group">
+  				<label for="salario">Apoyo economico</label>
+  				<div class="input-group">
+    				<div class="input-group-addon">$</div>
+      				<input class="form-control" name="apoyo" type="text" placeholder="750.00">
+      			</div>
+  			</div>
+  			<button type="submit" class="btn btn-default">Solicitar</button>
+		</form>
+  	</div>
+</div>

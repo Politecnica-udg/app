@@ -1,0 +1,13 @@
+<div class="panel panel-warning">
+	<div class="panel-heading">Asignar Datos</div>
+  	<div class="panel-body">
+    	<?php foreach ($arr as $key => $value):?>
+    		<div class="list-group">
+  				<a href="index.php/admon/asig_data/<?=$value['id']?>" class="list-group-item">
+    				<h4 class="list-group-item-heading"><?=$value['name']?></h4>
+    				<p class="list-group-item-text"><?= $value['email']?></p>
+  				</a>
+			</div>
+    	<?php endforeach;?>
+  	</div>
+</div>

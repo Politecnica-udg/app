@@ -1,0 +1,6 @@
+<div class="list-group">
+	<?php global $url_array;?>
+	<?php foreach ($arr as $key => $value):?>
+			<a href="index.php/admon/<?=$url_array[2]."/".$url_array[3]."/".$url_array[4]."/".$url_array[5]."/".$url_array[6]."/".$value['asig_cal']."/".$value['nom_pes']?>/" class="list-group-item"><?=utf8_encode($value['nom_pes'])?></a>
+	<?php endforeach;?>
+</div>

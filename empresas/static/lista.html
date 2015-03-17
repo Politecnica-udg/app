@@ -1,0 +1,12 @@
+<div class="alert alert-success" role="alert">
+	[tibacantes]  <strong><?=$arr['cantidad'][0]?></strong>
+</div>
+<h3>[text_em2]</h3>
+<div class="list-group">
+	<?php foreach ($arr as $key => $value):?>
+		<a href="#" class="list-group-item">
+    		<h4 class="list-group-item-heading"><?=utf8_encode($value['name'])?></h4>
+    		<p class="list-group-item-text"><?= $value['cali']?></p>
+  		</a>
+	<?php endforeach;?>
+</div>

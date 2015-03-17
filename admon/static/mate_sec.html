@@ -1,0 +1,21 @@
+<?php global $url_array;?>
+<blockquote>
+	<p><?= $url_array[4]." ".$url_array[5]?></p>
+	<p>[<?= $url_array[3]?>]</p>
+</blockquote>
+
+<div class="list-group">
+	<?php foreach ($arr as $key => $value):?>
+			<a href="index.php/admon/<?=$url_array[2]."/".$url_array[3]."/".$url_array[4]."/".$url_array[5]."/".$value['casg_prof']."/".$value['nom_pes']?>/" class="list-group-item"><?=utf8_encode($value['nom_pes'])?>
+
+
+		<?php if ($value['sec'] == 0 ):?>
+			<span class="label label-warning">[!revisado]</span>
+			<?php else:?>
+				<span class="label label-primary">[revisado]</span>
+		<?php endif;?>
+		</a>
+
+			</a>
+	<?php endforeach;?>
+</div>
