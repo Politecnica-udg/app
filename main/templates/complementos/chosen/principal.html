@@ -36,7 +36,7 @@
                                                 <span class="glyphicon glyphicon-cog"></span>
                                           </a>
                                           <ul class="dropdown-menu">
-                                                <?php if ($_SESSION['nivel'] != 1):?>
+                                                <?php if ($_SESSION['nivel'] != 12):?>
                                                      <?php foreach ($_SESSION['apps'] as $key => $value): ?>
                                                             <li>
                                                                   <a href="index.php/<?=$_SESSION['tipo']?>/<?=$value?>/">[<?= $value?>]</a>
@@ -67,7 +67,7 @@
                         </div><!--/span-->
                         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
                               <div class="list-group">
-                                    <?php if ($_SESSION['nivel'] != 1):?>
+                                    <?php if ($_SESSION['nivel'] != 12):?>
                                          <?php foreach ($_SESSION['apps'] as $key => $value): ?>
                                                       <a href="index.php/<?=$_SESSION['tipo']?>/<?=$value?>/" class="list-group-item">[<?= $value?>]</a>
                                           <?php endforeach;?>
@@ -84,7 +84,7 @@
                   </div>
             </div> <!-- /container -->
 
-            
+
             <!-- Include all compiled plugins (below), or include individual files as needed -->
             <script src="main/templates/js/jquery.min.js"></script>
             <script src="main/templates/js/angular.min.js"></script>
