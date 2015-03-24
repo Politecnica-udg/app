@@ -130,5 +130,17 @@
 	"help ort":"<strong>Favor</strong> de revisar la ortografía, en caso de tener tu carta de asignación errores ortográficos, no se firmara la asignación.",
 	"prom":"Promedio",
 	"acre":"Acreditado",
-	"!acre":"No Acreditado"
+	"!acre":"No Acreditado",
+	"ins_ci":"Selecciona el grupo que vas a evaluar, click sobre el icono de la columna lista.",
+	"lis_grup":"Listas de Grupos",
+	"carrera":"Carrera",
+	"lista":"Lista",
+	"ins_cia":"Ponga el numero de faltas y la calificacion a los alumnos en la fila que cada una indica.",
+	"tasistencias":"Total de clases",
+	"grabar":"Grabar",
+	"faltas":"Faltas",
+	"evaluacion":"Evaluacion",
+	"enpro":"En proceso",
+	"apro":"Aprobado",
+	"!apro":"Reprobado"
 }

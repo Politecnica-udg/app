@@ -1,26 +1,19 @@
 <?php
 	class alumnos {
-		var $view;
 		var $data;
-		function __construct()
-		{
-			$this->data = new general_Al();
-			$this->view = new vista_Al();
-		}
-		public function eval_A($calendario)
-		{
-			$mat = $this->data->clases($calendario);
-			return render_to_response ($this->view->gen_dinamic('lista.html',$mat));
+		function __construct(){$this->data = new general_Al();}
+		public function eval_A(){
+			global $conf_poli;
+			$mat = $this->data->clases($conf_poli['cal_prof']);
+			return render_to_response (vista_Al::gen_dinamic('lista.html',$mat));
 		}
 		public function cali()
 		{
-
 			$cali['gen'] = $this->data->cali_gen();
 			$cali['mate'] = $this->data->calificaciones();
-			return render_to_response ($this->view->gen_dinamic('calificaciones.html',$cali));
+			return render_to_response (vista_Al::gen_dinamic('calificaciones.html',$cali));
 		}
-		public function preguntas()
-		{
+		public function preguntas(){
 			if ($_POST['a']=='guardar') {
 				$data = $this->data->info($_POST['materia']);
 				$array[0] += $_POST['1-1'];
@@ -53,7 +46,7 @@
 				$data = $this->data->grabar($data,$array);
 				return HttpResponse('index.php/alumno/alum_e/');
 			}else{
-				return render_to_response($this->view->gen_dinamic('preguntas.html'));
+				return render_to_response(vista_Al::gen_dinamic('preguntas.html'));
 			}
 		}
 		public function ele_em()
@@ -113,16 +106,6 @@
 					
 				}	
 			}
-		}
-		public function perfil_ed()
-		{
-			if ($_POST) {
-				$this->data->edit_perfil();
-				return HttpResponse('index.php/alumno/ele_em/');
-			}else{
-				return render_to_response($this->view->gen_dinamic("perfil.html"));
-			}
-			
 		}
 	}
 ?>

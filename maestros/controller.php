@@ -1,62 +1,40 @@
 <?php
-	class maestros
-	{
-		var $view;
+	class maestros{
 		var $data;
-		function __construct()
-		{
-			$this->data = new general_M();
-			$this->view = new vista_M();
+		function __construct(){$this->data = new general_M();}
+		public function eval_grup(){
+			if ($_POST) {
+				for ($i=0; $i < $_POST['cantidad']; $i++) {
+					$var = ['cod' => $_POST['cod'.$i],
+							'cal' => $_POST['cal'.$i],
+							'fal' => $_POST['fal'.$i],
+							'car'=> $_GET['c'],
+							'mat' => $_GET['m'],
+							'class' => $_POST['asistencias']
+					];
+					$this->data->guardar($var);
+				}
+				if ($_POST['p']) {
+					$this->data->bloquear();
+				} else {
+					$this->data->marcar();
+				}
+				return HttpResponse('index.php/');
+			} elseif ($_GET) {
+				$grup = $this->data->datos();
+				return render_to_response(vista_M::page('alumnos.html',$grup));
+			} else {
+				$mat = $this->data->materias();
+				return render_to_response(vista_M::page('materias.html',$mat));
+			}			
 		}
-		public function principal()
-		{
-			$this->view->principal_view();
-		}
-		public function lista()
-		{
-			$GLOBALS = $this->data->materias();
-			$this->view->intermedia();
-		}
-		public function evaluar()
-		{
-			$GLOBALS = $this->data->datos();
-			$this->view->alumnos();
-		}
-		public function grabar()
-		{
-			header("Location: index.php?tipo=maestro");
-			for ($i=0; $i < $_POST['cantidad']; $i++) {
-				$var = ['cod' => $_POST['cod'.$i],
-					'cal' => $_POST['cal'.$i],
-					'fal' => $_POST['fal'.$i],
-					'car'=> $_GET['c'],
-					'mat' => $_GET['m'],
-					'class' => $_POST['asistencias']
-				];
-				$this->data->guardar($var);
-			}
-			$this->data->marcar();
-		}
-		public function cerrar()
-		{
-			header("Location: index.php?tipo=maestro");
-			for ($i=0; $i < $_POST['cantidad']; $i++) {
-				$var = ['cod' => $_POST['cod'.$i],
-					'cal' => $_POST['cal'.$i],
-					'fal' => $_POST['fal'.$i],
-					'car'=> $_GET['c'],
-					'mat' => $_GET['m']
-				];
-				$this->data->guardar($var);
-			}
-			$this->data->bloquear();
-		}
-		public function pdf_repin()
-		{
+		public function pdf_M(){
+			global $conf_poli;
+			require_once 'main/templates/complementos/pdf.php';
 			$carr=$this->data->carrera($_GET['c']);
 			$mat=$this->data->mat($_GET['m']);
 			$dato=$this->data->grupo();
-			$pdf = new PDF($carr,$mat);
+			$pdf = new PDF($carr,$mat,$conf_poli['cal_prof']);
 			$pdf->AddPage();
 			$pdf->SetMargins(5,5);
 			$pdf->SetFont('Arial','B',10);

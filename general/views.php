@@ -1,43 +1,20 @@
 <?php
-	class vista
-	{	
-		public function gen_dinamic($html,$arr = null)
-		{
-			$valores = [
-			'Title' => "[title_ci]",
-			'container' => dinamic("general/static/".$html,$arr)
-			];
-			$templad = dinamic("general/page.html");
-			$mostrar = remplas($valores,$templad);
-			return $mostrar;
-		}
-		public function index_log_in()
-		{
-			$valores = [
-			'Title' => "Escuela Politecnica Guadalajara",
-			'container' => dinamic("general/static/login.html")
-			];
-			$templad = load_page("main/templates/principal.html");
-			$mostrar = remplas($valores,$templad);
-			return $mostrar;
-		}
-		public function principal()
-		{
+	class vista{
+		static function index_log(){
 			$valores = [
 				'Title' => "Escuela Politecnica Guadalajara",
-				'container' => dinamic("general/static/principal.html")
+				'container' => dinamic("general/static/login.html")
 			];
-			$templad = dinamic("general/page.html");
+			$templad = load_page("main/templates/principal.html");
 			$mostrar = remplas($valores,$templad);
 			return $mostrar;
 		}
-		public function MS_404()
-		{
+		static function page($html, $arr = null){
 			$valores = [
-			'Title' => "[404_ruta]",
-			'container' => load_page("general/static/404.html")
+				'Title' => "Escuela Politecnica Guadalajara",
+				'container' => dinamic("general/static/".$html,$arr)
 			];
-			$templad = load_page("main/templates/principal.html");
+			$templad = dinamic("general/page.html");
 			$mostrar = remplas($valores,$templad);
 			return $mostrar;
 		}

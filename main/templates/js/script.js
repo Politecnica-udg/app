@@ -8,14 +8,6 @@
 
   ga('create', 'UA-37376197-4', 'udg.mx');
   ga('send', 'pageview');
-
-
-function justNumbers(e) {
-var keynum = window.event ? window.event.keyCode : e.which;
-
-if ( keynum == 8 ) return true;
-return /\d/.test(String.fromCharCode(keynum));
-}
 //-----------------
 function nav_old(a) {
 	alert(a);

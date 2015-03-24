@@ -1,12 +1,7 @@
 <?php
-	class general_Al extends datebase
-	{
-		function __construct()
-		{
-			parent::__construct();
-		}
-		public function clases($sem)
-		{
+	class general_Al extends datebase{
+		function __construct(){parent::__construct();}
+		public function clases($sem){
 			$query = $this->consulta("SELECT distinct id_cal,asig_cal,evaluar,nom_pes FROM cali
 				INNER JOIN planes on ccar_pes = carr_cal AND gdo_pes = gdo_cal  AND casg_pes =asig_cal
 				WHERE cic_cal='$sem' and cod_cal='$_SESSION[codigo]';");
@@ -48,9 +43,6 @@
 		{
 			$this->consulta("INSERT INTO evaluacion_a (carrera, grado, grupo, materia,ciclo,a,b,c,d,e,f,com) values ('$dato[0]','$dato[1]','$dato[2]','$dato[3]','$dato[4]','$arr[0]','$arr[1]','$arr[2]','$arr[3]','$arr[4]','$arr[5]','$arr[6]')");
 			$this->consulta("UPDATE cali SET evaluar ='1' WHERE id_cal = '$_POST[materia]'");
-		}
-		function __destruct() {
-			parent::__destruct();
 		}
 		public function consul()
 		{
