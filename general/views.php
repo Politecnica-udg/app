@@ -18,5 +18,14 @@
 			$mostrar = remplas($valores,$templad);
 			return $mostrar;
 		}
+		static function pageChosen($html, $arr = null){
+			$valores = [
+				'Title' => "Escuela Politecnica Guadalajara",
+				'container' => dinamic("general/static/".$html,$arr)
+			];
+			$templad = dinamic("main/templates/complementos/chosen/principal.html");
+			$mostrar = remplas($valores,$templad);
+			return $mostrar;
+		}
 	}
 ?>

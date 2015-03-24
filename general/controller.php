@@ -24,11 +24,32 @@
     				return render_to_response(vista::page('principal.html',$ents));
 				} else {
 					return render_to_response(vista::index_log());
-				}
-				
-				
+				}	
 			}
-			
+		}
+		public function app_admin(){
+			if ($_POST) {
+				$json = json_encode($_POST);
+				file_put_contents("main/templates/complementos/apps.json", $json);
+				return HttpResponse('index.php/');
+			}else{
+				$str_datos = file_get_contents("main/templates/complementos/apps.json");
+    			$app['user'] = json_decode($str_datos,true);
+    			$app['app'] = [ 0 => "cali",
+    						1 => "eval_grup",
+    						2 => "lis_maestos",
+    						3 => "lis_calit",
+    						4 => "eval_grups",
+    						5 => "adiestramientos",
+    						6 => "btrabajo",
+							7 => "alum_e",
+							8 => "cita",
+							9 => "vae",
+							10 => "im_evaa",
+							11 => "vbt",
+							12 => "app_admin"];
+				return render_to_response(vista::pageChosen('adapp.html',$app));
+			}
 		}
 		//-------------	
 		public function url_p($url){

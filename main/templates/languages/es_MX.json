@@ -142,5 +142,6 @@
 	"evaluacion":"Evaluacion",
 	"enpro":"En proceso",
 	"apro":"Aprobado",
-	"!apro":"Reprobado"
+	"!apro":"Reprobado",
+	"app_admin":"Administrador de app's"
 }
