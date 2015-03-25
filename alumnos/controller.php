@@ -44,7 +44,7 @@
 				$array[5] /=2;
 				$array[6] = $_POST['com'];
 				$data = $this->data->grabar($data,$array);
-				return HttpResponse('index.php/alumno/alum_e/');
+				return HttpResponse('index.php/alum_e/');
 			}else{
 				return render_to_response(vista_Al::gen_dinamic('preguntas.html'));
 			}
@@ -61,7 +61,7 @@
 						if ($url_array[4]) {
 							$this->data->marcar($url_array[4]);
 							$this->data->marcar2($url_array[3]);
-							return HttpResponse('index.php/alumno/ele_em/');
+							return HttpResponse('index.php/ele_em/');
 						}else{
 							$inf_em = $this->data->tli($url_array[3]);
 							$inf_em['soli'] = $this->data->solici_lista($url_array[3]);
