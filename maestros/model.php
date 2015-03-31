@@ -11,7 +11,7 @@
 			if($this->numero_de_filas($query) > 0){
 				while ( $tsArray = $this->fetch_assoc($query) ) {
 					$data[] = $tsArray;
-				
+				}
 				return $data;
 			}else{
 				return '';
@@ -34,7 +34,7 @@
 			$this->consulta("UPDATE evaluacion SET cal_int_ev ='$value[cal]', tfal_int_ev='$value[fal]', tclas_int_ev='$value[class]' WHERE cod_ev='$value[cod]' and car_ev = '$value[car]' and asig_ev = '$value[mat]'");
 		}
 		public function bloquear(){
-			$this->consulta(" UPDATE asig_prof SET cin =2 WHERE cod_prof='$_SESSION[codigo]' and ccar_prof = '$_]' and casg_prof = '$_GET[m]' and gdo_prof='$_GET[g]' and gpo_prof='$_GET[gr]'");
+			$this->consulta(" UPDATE asig_prof SET cin =2 WHERE cod_prof='$_SESSION[codigo]' and ccar_prof = '$_GET[c]' and casg_prof = '$_GET[m]' and gdo_prof='$_GET[g]' and gpo_prof='$_GET[gr]'");
 		}
 		public function marcar(){
 			$this->consulta(" UPDATE asig_prof SET cin =1 WHERE cod_prof='$_SESSION[codigo]' and ccar_prof = '$_GET[c]' and casg_prof = '$_GET[m]' and gdo_prof='$_GET[g]' and gpo_prof='$_GET[gr]'");

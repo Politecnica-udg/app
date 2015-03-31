@@ -55,21 +55,12 @@
 		public function url_p($url){
 			global $url_array;
 			$url_array = explode('/', $url);
-			if (!$url_array[2]) {
-				return $url;
-			}elseif($url_array[1] == 'alumno' OR 
-					$url_array[1] == 'maestro' OR 
-					$url_array[1] == 'admon' OR
-					$url_array[1] == 'empresa') {
-					if ($url_array[1] == $_SESSION['tipo']) {
-						return '/'.$url_array[1].'/'.$url_array[2].'/';
-					}else{
-						return '/denegado/';
-					}
-			}elseif ($url_array[1] == 'visitante') {
-				return '/'.$url_array[1].'/'.$url_array[2].'/';
-			}elseif($url_array[1] == 'perfil'){
-				return $url;
+			if ($url_array[0] == '' and !$url_array[1]) {
+				return '/';
+			}elseif(!$url_array[2]){
+				return $url_array[1];
+			}elseif ($url_array[2]) {
+				return $url_array[1];
 			}else{
 				return '404';
 			}

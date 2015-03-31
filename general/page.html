@@ -34,20 +34,11 @@
                                                 <span class="glyphicon glyphicon-cog"></span>
                                           </a>
                                           <ul class="dropdown-menu">
-                                                <?php if ($_SESSION['nivel'] != 12):?>
-                                                     <?php foreach ($_SESSION['apps'] as $key => $value): ?>
-                                                            <li>
-                                                                  <a href="index.php/<?=$_SESSION['tipo']?>/<?=$value?>/">[<?= $value?>]</a>
-                                                            </li> 
-                                                      <?php endforeach;?>
-                                                <?php else:?>
-                                                      <?php foreach ($_SESSION['apps'] as $key => $value): ?>
-                                                            <li>
-                                                                  <a href="index.php/<?=$value?>/">[<?= $value?>]</a>
-                                                            </li> 
-                                                      <?php endforeach;?>
-                                                <?php endif;?>
-                                                
+                                                <?php foreach ($_SESSION['apps'] as $key => $value): ?>
+                                                      <li>
+                                                            <a href="index.php/<?=$value?>/">[<?= $value?>]</a>
+                                                      </li> 
+                                                <?php endforeach;?>
                                                 <li class="divider"></li>
                                                 <li><a href="index.php/perfil/editar/">[edit_perfil]</a></li>
                                                 <li><a href="index.php/distroy/">[login_distroy]</a></li>
@@ -65,15 +56,9 @@
                         </div><!--/span-->
                         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
                               <div class="list-group">
-                                    <?php if ($_SESSION['nivel'] != 12):?>
-                                         <?php foreach ($_SESSION['apps'] as $key => $value): ?>
-                                                      <a href="index.php/<?=$_SESSION['tipo']?>/<?=$value?>/" class="list-group-item">[<?= $value?>]</a>
-                                          <?php endforeach;?>
-                                    <?php else:?>
-                                          <?php foreach ($_SESSION['apps'] as $key => $value): ?>
-                                                      <a href="index.php/<?=$value?>/" class="list-group-item">[<?= $value?>]</a>
-                                          <?php endforeach;?>
-                                    <?php endif;?>
+                                    <?php foreach ($_SESSION['apps'] as $key => $value): ?>
+                                          <a href="index.php/<?=$value?>/" class="list-group-item">[<?= $value?>]</a>
+                                    <?php endforeach;?>
                               </div>
                         </div><!--/span-->
                   </div><!--/row-->
