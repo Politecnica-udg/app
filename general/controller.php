@@ -70,7 +70,7 @@
 			return HttpResponse('index.php/');
 		}
 		public function e404(){
-			return render_to_response("404");
+			return render_to_response(vista::page('404.html'));
 		}
 		public function system_off(){
 			return render_to_response("Sistema apagado");
