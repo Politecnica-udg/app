@@ -4,7 +4,7 @@ class datebase	{
 	function __construct()
 	{
 		if (!isset($this->conexion)) {
-			$this->conexion=mysql_connect(host,user,pw)or die("Probelmas con la conexion ".mysql_errno());
+			$this->conexion=mysql_connect(host,user,pw) or die("Problemas con la conexion ".mysql_errno());
 			mysql_select_db(db,$this->conexion) or die("Probelmas con la base de datos ".mysql_error());
 		}
 	}

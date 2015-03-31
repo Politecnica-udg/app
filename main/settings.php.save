@@ -1,0 +1,45 @@
+<?php
+    global $conf_poli;
+
+    $conf_poli = [
+      'cal_prof' => '2014Bcd .',
+      'eval' => true
+    ];
+
+    global $conf_host;
+    
+    $activate = TRUE;
+    $data_base = TRUE;
+
+        $type_db = ""; //MySQL
+        define('host', 'localhost');
+        define('user', 'root');
+        define('pw', 'sistemas');
+        define('db', 'poli_gdl');
+
+    $INSTALLED_APPS = [
+        "general",
+        "maestros",
+        "alumnos"
+    ];
+
+    $conf_host = [
+      'host' => 'http://politecnica.sems.udg.mx/app/',
+      'lang' => 'es'
+    ];
+    
+   if ($data_base) {
+     require_once 'db.php';
+   }
+   login_app($INSTALLED_APPS);
+  $objects = [
+        "poli" => new poli(),
+        "maestro" => new maestros(),
+        "alumno" => new alumnos()
+   ];
+   if ($activate) {
+      require_once 'url.php';
+    }else{
+      $objects['poli']->system_off();
+    }
+?>
