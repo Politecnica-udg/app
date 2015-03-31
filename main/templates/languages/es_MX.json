@@ -143,5 +143,6 @@
 	"enpro":"En proceso",
 	"apro":"Aprobado",
 	"!apro":"Reprobado",
-	"app_admin":"Administrador de app's"
+	"app_admin":"Administrador de app's",
+	"cita":"Cita"
 }
