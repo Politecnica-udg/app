@@ -51,7 +51,7 @@
 				$pdf->Ln();
 				$pdf->Cell(10);
 				$pdf->Cell(17,5,$key+1,1,0,'C');
-				$pdf->Cell(90,5,utf8_encode($value['nom_ubi']),1,0,'C');
+				$pdf->Cell(90,5,utf8_encode($value['nom_ubi']),1,0);
 				$pdf->Cell(25,5,$value['cod_ev'],1,0,'C');
 				$pdf->Cell(15,5,$value['tfal_int_ev'],1,0,'C');
 				$pdf->Cell(30,5,$value['cal_int_ev'],1,0,'C');
