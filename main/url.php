@@ -12,5 +12,7 @@
 		case 'cali':{$objects['alumno']->cali();}break;
 		case 'alum_e':{$objects['alumno']->eval_A();}break;
 		case 'preguntas':{$objects['alumno']->preguntas();}break;
+		//administrativos
+		case 'lis_maestos':{$objects['admon']->lisMaestros();}break;
 	}
 ?>

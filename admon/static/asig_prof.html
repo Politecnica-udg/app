@@ -1,9 +1,0 @@
-<form method="post" role="form" action="index.php/admon/im_evaa/">
-    <p class="help-block">[text_help_imprimir2]</p>
-    <select name="materia">
-    	<?php foreach ($arr as $key => $dato):?>
-    		<option value="<?= $dato['id']?>"><?=$dato['cal_prof']." ".$dato['nom_pes']." ".$dato['gdo_prof']." ".$dato['gpo_prof']?> [<?= $dato['ccar_prof']?>]</option>
-		<?php endforeach;?>
-	</select>
-	<button type="submit" class="btn btn-default">[enviar]</button>
-</form>

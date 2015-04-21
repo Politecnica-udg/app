@@ -36,7 +36,7 @@
 	"evalu":"Evaluar",
 	"title_ci":"Escuela Politécnica Guadalajara",
 	"eval_grup":"Evaluar a los grupos",
-	"lis_maestos":"Lista de maestros faltantes",
+	"lis_maestos":"Lista de maestros evaluación",
 	"lis_calit":"Lista de calificaciones",
 	"eval_grups":"Evaluar grupos",
 	"adiestramientos":"Adiestramientos",
@@ -144,5 +144,11 @@
 	"apro":"Aprobado",
 	"!apro":"Reprobado",
 	"app_admin":"Administrador de app's",
-	"cita":"Cita"
+	"cita":"Cita",
+	"status":"Estado",
+	"cant":"Cantidad",
+	"eva0":"Faltantes",
+	"eva1":"En proceso",
+	"eva2":"Terminados",
+	"todos":"Todos"
 }

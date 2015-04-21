@@ -203,16 +203,85 @@ body {
 }
 
 #perfil-alumno input:invalid {
-background-color: rgba(255,0,0,0.3); 
-border: 1px solid red;
- 
+  background-color: rgba(255,0,0,0.3); 
+  border: 1px solid red;
 }
  
 /* Estilo por defecto */
  
 #perfil-alumno input:valid {
-background-color: rgba(0,0,255,0.3); 
+  background-color: rgba(0,0,255,0.3); 
+  border: 1px solid blue;
+}
 
-border: 1px solid blue;
- 
+.btn-group >  .btn-primary{
+  color: #000;
+}
+.btn-group > .active{
+  background-color: #0D6899;
+  color: #fff;
+  font-style: italic;
+}
+.sepa{
+  margin-top: 15px;
+}
+.headrojo > .panel-heading{
+  background-color: #E66E6C;
+  color: #fff;
+}
+.headverde > .panel-heading{
+  background-color: #6FEE76;
+  color: #139C0E;
+}
+.headama > .panel-heading{
+  background-color: #F7F974;
+  color: #9C920E;
+}
+.headnar > .panel-heading{
+  background-color: #FAC864;
+}
+.headgris > .panel-heading{
+  background-color: #A2A7A2;
+  color: #000;
+}
+.headext > .panel-heading{
+  background-color: #83F2F2;
+  color: #000;
+}
+.radverde{
+    background-color: #6FEE76;
+    border-color: #6FEE76;  
+  color: #139C0E;
+}
+.radama{
+  background-color: #F7F974;
+  border-color: #F7F974;
+  color: #9C920E;
+}
+.radrojo{
+    background-color: #E66E6C;    
+    border-color: #E66E6C;
+  color: #fff;
+}
+.radazul{
+  color: #fff;
+
+}
+.radnar{
+  background-color: #FAC864;
+  border-color: #FAC864;
+  color:#A94442;
+}
+.radgris{
+  background-color: #A2A7A2;
+  border-color: #A2A7A2;
+  color:#000;
+}
+.radext{
+  background-color: #83F2F2;
+  border-color: #83F2F2;
+  color:#000;
+}
+.btn > input[type="radio"]{
+  display: none;
 }
