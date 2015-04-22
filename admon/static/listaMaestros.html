@@ -20,13 +20,13 @@
 		<th>[cant]</th>
  	</tr>
  	<?php foreach ($arr as $key => $value): ?>
- 		<?php if($value['nom_pro'] != ''):?>
+ 		<?php if(($value['nom_pro'] != '') or ($value['nom_pro'] != 0)):?>
 	 		<tr ng-if="eva<?=$value['cin']?>">
 	 			<td><?=utf8_encode($value['nom_pro'])?></td>
 	 			<?php if ($value['cin']==0):?> 
-	 				<td><span class="label label-danger">[eva0]</span></td>
+	 				<td><a href="index.php/lis_maestos/<?= $value['cod_prof']?>"><span class="label label-danger">[eva0]</span></a></td>
 	 			<?php elseif ($value['cin']==1) :?>
-	 				<td><span class="label label-warning">[eva1]</span></td>
+	 				<td><a href="index.php/lis_maestos/<?= $value['cod_prof']?>"><span class="label label-warning">[eva1]</span></a></td>
 	 			<?php else:?>
 	 				<td><a href="index.php/lis_maestos/<?= $value['cod_prof']?>"><span class="label label-primary">[eva2]</span></a></td>
 	 			<?php endif;?>
