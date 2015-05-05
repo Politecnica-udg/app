@@ -150,5 +150,15 @@
 	"eva0":"Faltantes",
 	"eva1":"En proceso",
 	"eva2":"Terminados",
-	"todos":"Todos"
+	"todos":"Todos",
+	"ips":"Administrador de IP's",
+	"ipsR":"Reporte de IP's",
+	"buscar":"Buscar",
+	"ipD":"Direccion Ip",
+	"namePC":"Nombre de la Pc",
+	"macD":"Direccion Mac",
+	"swIp":"Switch",
+	"puertoIp":"Puerto",
+	"save":"Guardar",
+	"edit":"Editar"
 }

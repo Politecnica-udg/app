@@ -27,6 +27,39 @@
 				}	
 			}
 		}
+		public function ips(){
+			if ($_POST) {
+				if ($_POST['ip4E']) {
+					$this->data->ipEdit($_POST);
+					return HttpResponse('index.php/ips');
+				} elseif ($_POST['ip4S']){
+					$this->data->ipSave($_POST);
+					return HttpResponse('index.php/ips');
+				} else {
+					$ip = $this->data->ip($_POST);
+					if($ip != ''){
+						if ($_POST['edit']) {
+							$ip['error'] = TRUE;
+							$ip['edit'] = TRUE;
+							$ip['ip3'] = $_POST['ip3'];
+							$ip['ip4'] = $_POST['ip4'];
+							return render_to_response(vista::page('ips.html',$ip));
+						} else {
+							return render_to_response(vista::page('ips.html',$ip));
+						}
+					}else{
+						$ip['error'] = TRUE;
+						$ip['ip3'] = $_POST['ip3'];
+						$ip['ip4'] = $_POST['ip4'];
+						return render_to_response(vista::page('ips.html',$ip));
+					}
+				}
+				
+				
+			}else{
+				return render_to_response(vista::page("ips.html"));
+			}
+		}
 		public function app_admin(){
 			if ($_POST) {
 				$json = json_encode($_POST);
@@ -47,7 +80,9 @@
 							9 => "vae",
 							10 => "im_evaa",
 							11 => "vbt",
-							12 => "app_admin"];
+							12 => "app_admin",
+							13 => "ips",
+							14 => "ipsR"];
 				return render_to_response(vista::pageChosen('adapp.html',$app));
 			}
 		}
