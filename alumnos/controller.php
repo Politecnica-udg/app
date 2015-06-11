@@ -4,7 +4,8 @@
 		function __construct(){$this->data = new general_Al();}
 		public function eval_A(){
 			global $conf_poli;
-			$mat = $this->data->clases($conf_poli['cal_prof']);
+			$mat = $this->data->clases($conf_poli['cal_prof'][0]);
+			$mat .= $$this->data->clases($conf_poli['cal_prof'][1]);
 			return render_to_response (vista_Al::gen_dinamic('lista.html',$mat));
 		}
 		public function cali()
