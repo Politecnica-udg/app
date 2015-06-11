@@ -4,9 +4,8 @@
 		function __construct(){$this->data = new general_Al();}
 		public function eval_A(){
 			global $conf_poli;
-			$arr1 = $this->data->clases($conf_poli['cal_prof'][0]);
-			$arr2 = $$this->data->clases($conf_poli['cal_prof'][1]);
-			$mat = array_merge($arr1,$arr2);
+			$mat = $this->data->clases($conf_poli['cal_prof'][0]);
+			//$mat = array_merge($arr1,$arr2);
 			return render_to_response (vista_Al::gen_dinamic('lista.html',$mat));
 		}
 		public function cali()
