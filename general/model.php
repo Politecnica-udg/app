@@ -21,5 +21,17 @@
 			$this->consulta("UPDATE ips_poli SET name_ip = '$dat[namePC]', mac_ip = '$dat[macD]', sw_ip = '$dat[swIp]', puerto_ip = '$dat[puertoIp]'
 										WHERE ip3_ip = '$dat[ip3S]' AND ip4_ip = '$dat[ip4S]'");
 		}
+		public function iplis()
+		{
+			$query = $this->consulta("SELECT * FROM ips_poli;");
+			if($this->numero_de_filas($query) > 0){
+				while ( $tsArray = $this->fetch_assoc($query) ) {
+					$data[] = $tsArray;
+				}
+				return $data;
+			}else{
+				return '';
+			}
+		}
 	}
 ?>

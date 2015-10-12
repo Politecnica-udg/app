@@ -6,6 +6,7 @@
 		case 'app_admin':{$objects["poli"]->app_admin();}break;
 		default:{$objects["poli"]->e404();}break;
 		case 'ips':{$objects["poli"]->ips();}break;
+		case 'ipsR':{$objects["poli"]->ipsR();}break;
 		//App's de maestro
 		case 'eval_grup':{$objects['maestro']->eval_grup();}break;
 		case 'pdf':{$objects['maestro']->pdf_M();}break;

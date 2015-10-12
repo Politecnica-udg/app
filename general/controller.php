@@ -53,11 +53,19 @@
 						$ip['ip4'] = $_POST['ip4'];
 						return render_to_response(vista::page('ips.html',$ip));
 					}
-				}
-				
-				
+				}	
 			}else{
+				$this->data->iplis();
 				return render_to_response(vista::page("ips.html"));
+			}
+		}
+		public function ipsR(){
+			global $url_array;
+			if ($url_array[2]) {
+				echo "lol";
+			}else{
+				$iplis = $this->data->iplis();
+				return render_to_response(vista::page("ipsR.html",$iplis));
 			}
 		}
 		public function app_admin(){
