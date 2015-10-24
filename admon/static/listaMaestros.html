@@ -1,18 +1,20 @@
 <div ng-app="pagPoli" ng-controller="ocultar">
 	<div class="btn-group">
-            <label class="btn btn-primary radrojo">
-                <input type="radio" ng-click="mostrar()" ng-model="t" name="options" value="1" checked>[eva0]
-            </label>
-            <label class="btn btn-primary radama">
-                <input type="radio" ng-click="mostrar()" ng-model="t" name="options" value="2"> [eva1]
-            </label>
-            <label class="btn btn-primary radazul">
-                <input type="radio" ng-click="mostrar()" ng-model="t" name="options" value="3"> [eva2]
-            </label>
-             <label class="btn btn-primary radverde">
-                <input type="radio" ng-click="mostrar()" ng-model="t" name="options" value="4"> [todos]
-            </label>
-        </div>
+        <label class="btn btn-primary radrojo">
+            <input type="radio" ng-click="mostrar()" ng-model="t" name="options" value="1" checked>[eva0]
+        </label>
+        <label class="btn btn-primary radama">
+            <input type="radio" ng-click="mostrar()" ng-model="t" name="options" value="2"> [eva1]
+        </label>
+        <label class="btn btn-primary radazul">
+            <input type="radio" ng-click="mostrar()" ng-model="t" name="options" value="3"> [eva2]
+        </label>
+         <label class="btn btn-primary radverde">
+            <input type="radio" ng-click="mostrar()" ng-model="t" name="options" value="4"> [todos]
+        </label>
+    </div>
+    <hr>
+    <br>
 	<table class="table">
 	<tr>
 		<th>[name]</th>
@@ -30,7 +32,7 @@
 	 			<?php else:?>
 	 				<td><a href="index.php/lis_maestos/<?= $value['cod_prof']?>"><span class="label label-primary">[eva2]</span></a></td>
 	 			<?php endif;?>
-	 			<td><span class="badge pull-right"><?=$value['COUNT(*)']?></span></td>
+	 			<td><span class="badge pull-right">{{<?=$value['COUNT(*)']?>/2}}</span></td>
 	 		</tr>
  		<?php endif;?>
  	<?php endforeach;?>

@@ -1,44 +1,50 @@
-<div class="alert alert-warning" role="alert">Maestro, si aparecen alumnos que no estén en su <a href="#" class="alert-link">lista de asistencia</a> favor de enviarlos a control escolar</div>
+<div class="alert alert-warning" role="alert">
+    Maestro, si aparecen alumnos que no estén en su <a href="#" class="alert-link">lista de asistencia</a> favor de enviarlos a control escolar
+</div>
 <div class="text-center" id="lis_grup">[Grupo] de <?=$_GET['g']?><?=$_GET['gr']?> </div>
 <div class="row">
   	<div class="col-md-9 col-md-push-3"><p class="text_ls">[name]: <?= utf8_encode($_SESSION['nombre'])?></p></div>
- 	<div class="col-md-3 col-md-pull-9"><p class="text_ls">[cod]: <?= $_SESSION['codigo']?></p></div>
+ 	  <div class="col-md-3 col-md-pull-9"><p class="text_ls">[cod]: <?= $_SESSION['codigo']?></p></div>
 </div>
 <pre>[ins_cia]</pre>
 <form action="" method="post">
-	<div class="row">
-  		<div class="col-md-9 col-md-push-3">
-  			<p class="text_ls">
-  				<input type="number" min='0' max='300' class="form-control" id="asistencia" name="asistencias" value="<?= $_SESSION['class']?>" onfocus="if(this.value=='<?= $_SESSION['class']?>')this.value=''" placeholder="<?= $_SESSION['class']?>">
-  			</p>
-  		</div>
- 		<div class="col-md-3 col-md-pull-9"><p class="text_ls">[tasistencias]</p></div>
-	</div>
-	<table class="table table-striped" id="califiacion">
- 		<tr>
- 			<th>[cod]</th>
- 			<th>[name]</th>
- 			<th>[faltas]</th>
- 			<th>[evaluacion]</th>
- 		</tr>
- 		<?php foreach ($arr as $key => $value):?>
- 			<tr>
- 				<td><?=$value['cod_ev']?></td>
- 				<input type="hidden"  name="cod<?=$key?>" value="<?=$value['cod_ev']?>">
- 				<td><?=utf8_encode($value['nom_ubi'])?></td>
- 				<td>
- 					<label class="sr-only" for="faltas">[faltas]</label>
-   					 <input type="number" min='0' max='100' class="form-control" id="faltas" name="fal<?=$key?>" value="<?=$value['tfal_int_ev']?>" onfocus="if(this.value=='<?=$value['tfal_int_ev']?>')this.value=''" placeholder="<?=$value['tfal_int_ev']?>">
-    			</td>
-    			<td>
- 					<label class="sr-only" for="evaluacion">[evaluacion]</label>
-   					<input type="number" min='0' max='100' class="form-control" id="evaluacion" name="cal<?=$key?>" value="<?=$value['cal_int_ev']?>" onfocus="if(this.value=='<?=$value['cal_int_ev']?>')this.value=''" placeholder="<?=$value['cal_int_ev']?>">
-    			</td>
- 			</tr>
- 		<?php endforeach; ?>
-	</table>
-	<input type="hidden" name="cantidad" value="<?= count($arr)?>">
-	<input type="hidden" name="opcion" value="si">
-	<button type="submit" class="btn btn-default">[grabar]</button>
-	<button type="submit" value="si" name="p" class="btn btn-default">[cerrar_enviar]</button>
-	</form>
+    <?php if ($arr == null): ?>
+        <h3>No hay información. Si es un error favor de ir a reportarlo.</h3>
+    <?php else: ?>
+        <div class="row">
+            <div class="col-md-9 col-md-push-3">
+                <p class="text_ls">
+                    <input type="number" min='0' max='300' class="form-control" id="asistencia" name="asistencias" value="<?= $_SESSION['class']?>" onfocus="if(this.value=='<?= $_SESSION['class']?>')this.value=''" placeholder="<?= $_SESSION['class']?>">
+                </p>
+            </div>
+            <div class="col-md-3 col-md-pull-9"><p class="text_ls">[tasistencias]</p></div>
+        </div>
+        <table class="table table-striped" id="califiacion">
+            <tr>
+                <th>[cod]</th>
+                <th>[name]</th>
+                <th>[faltas]</th>
+                <th>[evaluacion]</th>
+            </tr>
+            <?php foreach ($arr as $key => $value):?>
+                <tr>
+                    <td><?=$value['cod_ev']?></td>
+                    <input type="hidden"  name="cod<?=$key?>" value="<?=$value['cod_ev']?>">
+                    <td><?=utf8_encode($value['nom_ubi'])?></td>
+                    <td>
+                        <label class="sr-only" for="faltas">[faltas]</label>
+                        <input type="number" min='0' max='100' class="form-control" id="faltas" name="fal<?=$key?>" value="<?=$value['tfal_int_ev']?>" onfocus="if(this.value=='<?=$value['tfal_int_ev']?>')this.value=''" placeholder="<?=$value['tfal_int_ev']?>">
+                    </td>
+                    <td>
+                        <label class="sr-only" for="evaluacion">[evaluacion]</label>
+                        <input type="number" min='0' max='100' class="form-control" id="evaluacion" name="cal<?=$key?>" value="<?=$value['cal_int_ev']?>" onfocus="if(this.value=='<?=$value['cal_int_ev']?>')this.value=''" placeholder="<?=$value['cal_int_ev']?>">
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+        <input type="hidden" name="cantidad" value="<?= count($arr)?>">
+        <input type="hidden" name="opcion" value="si">
+        <button type="submit" class="btn btn-default">[grabar]</button>
+        <button type="submit" value="si" name="p" class="btn btn-default">[cerrar_enviar]</button>
+    <?php endif ?>
+</form>
