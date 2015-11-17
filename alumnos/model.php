@@ -2,7 +2,7 @@
 	class general_Al extends datebase{
 		function __construct(){parent::__construct();}
 		public function clases($sem){
-			$query = $this->consulta("SELECT distinct id_cal,asig_cal,evaluar,nom_pes FROM cali
+			$query = $this->consulta("SELECT distinct id_cal, asig_cal, evaluar, nom_pes FROM cali
 				INNER JOIN planes on ccar_pes = carr_cal AND gdo_pes = gdo_cal  AND casg_pes =asig_cal
 				WHERE cic_cal='$sem' and cod_cal='$_SESSION[codigo]';");
 			if($this->numero_de_filas($query) > 0){

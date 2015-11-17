@@ -90,7 +90,8 @@
 							11 => "vbt",
 							12 => "app_admin",
 							13 => "ips",
-							14 => "ipsR"];
+							14 => "ipsR",
+							15 => "lis_grupo"];
 				return render_to_response(vista::pageChosen('adapp.html',$app));
 			}
 		}

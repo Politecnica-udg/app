@@ -16,5 +16,6 @@
 		case 'preguntas':{$objects['alumno']->preguntas();}break;
 		//administrativos
 		case 'lis_maestos':{$objects['admon']->lisMaestros();}break;
+		case 'lis_grupo':{$objects['admon']->lisGrupo();}break;
 	}
 ?>

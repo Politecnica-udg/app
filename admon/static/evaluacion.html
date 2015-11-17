@@ -1,0 +1,9 @@
+<?php foreach ($arr as $key => $value):?>
+	Carrera:[<?=$value['carr_cal']?>] Grado:<?=$value['gdo_cal']?> Grupo:<?=$value['gpo_cal']?>
+	<?php if($value['evaluar'] == 0):?>
+		No evaluaron: <?= $value['cont']?>
+	<?php else:?>
+		Evaluaron: <?= $value['cont']?>
+	<?php endif;?>
+	<br>
+<?php endforeach;?>

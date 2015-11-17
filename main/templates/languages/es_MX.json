@@ -160,5 +160,7 @@
 	"swIp":"Switch",
 	"puertoIp":"Puerto",
 	"save":"Guardar",
-	"edit":"Editar"
+	"edit":"Editar",
+	"lis_grupo":"Grupos evaluando",
+	"ver+":"Ver mas"
 }

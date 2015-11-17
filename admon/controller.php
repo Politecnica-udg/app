@@ -12,5 +12,15 @@
 				return render_to_response (vista_A::gen_dinamic('listaMaestros.html',$mat));
 			}
 		}
+		public function lisGrupo(){
+			global $url_array;
+			if ($url_array[2]) {
+				$mat = $this->data->evaluados($url_array[2]);
+				return render_to_response (vista_A::gen_dinamic('evaluacion.html',$mat));
+			}else{
+				$mat = $this->data->maestros();
+				return render_to_response(vista_A::gen_dinamic('listaGruposA.html',$mat));
+			}
+		}
 	}
 ?>

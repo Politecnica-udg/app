@@ -1,0 +1,16 @@
+<div ng-app="pagPoli" ng-controller="ocultar">
+	<table class="table">
+		<tr>
+			<th>[name]</th>
+			<th>[ver+]</th>
+ 		</tr>
+ 		<?php foreach ($arr as $key => $value): ?>
+ 			<?php if(($value['nom_pro'] != '') or ($value['nom_pro'] != 0)):?>
+	 			<tr ng-if="eva<?=$value['cin']?>">
+	 				<td><?=utf8_encode($value['nom_pro'])?></td>
+	 				<td><a href="index.php/lis_grupo/<?= $value['cod_prof']?>"><span class="label label-primary">[ver+]</span></a></td>
+	 			</tr>
+ 			<?php endif;?>
+ 		<?php endforeach;?>
+	</table>
+</div>
