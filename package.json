@@ -1,0 +1,16 @@
+{
+  "name": "poli-app",
+  "version": "0.2.0",
+  "description": "Sistema de la escuela Politecnica de Guadalajara",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Politecnica-udg/app.git"
+  },
+  "author": "@Norman404",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-uglify": "~0.11.0",
+    "grunt-contrib-less": "~1.1.0",
+    "grunt-contrib-watch": "~0.6.1"
+  }
+}

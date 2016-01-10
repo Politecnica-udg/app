@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+      <head>
+            <base href="{[host]}">
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>{Title}</title>
+            <link rel="icon" type="image/vnd.microsoft.icon" href="frontend/assets/complementos/img/favicon.ico">
+            <link href="frontend/assets/css/bootstrap.min.css" rel="stylesheet">
+            <link href="frontend/assets/css/style.css" rel="stylesheet">
+            <!--[if lt IE 9]>
+                  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+            <![endif]-->
+      </head>
+      <body>
+            <div class="navbar navbasr-fixed-top navbar-inverse" role="navigation">
+                  <div class="container">
+                        <div class="navbar-header">
+                              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                              </button>
+                              <a class="navbar-brand" href="{[host]}index.php/">[udg]</a>
+                        </div>
+                        <div class="collapse navbar-collapse">
+                              <ul class="nav navbar-nav navbar-right nav-stacked">
+                                    <li><a href="{[host]}index.php/"><span class="glyphicon glyphicon-home"></a></li>
+                                    <li class="dropdown">
+                                          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                                <span class="glyphicon glyphicon-cog"></span>
+                                          </a>
+                                          <ul class="dropdown-menu">
+                                                <?php foreach ($_SESSION['apps'] as $key => $value): ?>
+                                                      <li>
+                                                            <a href="index.php/<?=$value?>/">[<?= $value?>]</a>
+                                                      </li> 
+                                                <?php endforeach;?>
+                                                <li class="divider"></li>
+                                                <li><a href="index.php/perfil/editar/">[edit_perfil]</a></li>
+                                                <li><a href="index.php/destroy/">[login_distroy]</a></li>
+
+                                          </ul>
+                                    </li>
+                              </ul>
+                        </div><!-- /.nav-collapse -->
+                  </div><!-- /.container -->
+            </div><!-- /.navbar -->
+            <div class="container">
+                  <div class="row row-offcanvas row-offcanvas-right">
+                        <div class="col-xs-12 col-sm-9">
+                              {container}
+                        </div><!--/span-->
+                        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+                              <div class="list-group">
+                                    <?php foreach ($_SESSION['apps'] as $key => $value): ?>
+                                          <a href="index.php/<?=$value?>/" class="list-group-item">[<?= $value?>]</a>
+                                    <?php endforeach;?>
+                              </div>
+                        </div><!--/span-->
+                  </div><!--/row-->
+                  <div class="footer">
+                        <p>© [udg] 2014</p>
+                  </div>
+            </div> <!-- /container -->
+            <script src="frontend/assets/js/jquery.min.js"></script>
+            <script src="frontend/assets/js/angular.min.js"></script>
+            <script src="frontend/assets/js/bootstrap.min.js"></script>
+            <script src="frontend/assets/js/script.min.js"></script>
+      </body>
+</html>

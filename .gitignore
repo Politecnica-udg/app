@@ -1,2 +1,5 @@
-main/templates/complementos/apps.json
+frontend/assets/complementos/apps.json
 main/settings.php
+node_modules/*
+frontend/assets/css/style.css
+frontend/assets/css/style.css.map

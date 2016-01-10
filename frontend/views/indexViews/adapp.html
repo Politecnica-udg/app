@@ -1,0 +1,22 @@
+<?php $i=0;?>
+<form method="POST" action="" class="formAdmin">
+	<?php foreach ($arr['user'] as $key => $value):?>
+	<h3>Nivel: <?= $key?></h3>
+	<select name="<?=$key?>[]" class="chosen adArea" multiple >
+		<?php foreach ($arr['app'] as $keyapp => $valueapp):?>
+			<?php foreach ($value as $keyuser => $valueuser):?>
+				<?php if ($valueapp == $valueuser):?>
+					<?php $i++;?>
+				<?php endif;?>
+			<?php endforeach;?>
+			<?php if($i == 0):?>
+				<option value="<?= $valueapp?>">[<?= $valueapp?>]</option>
+			<?php else:?>
+				<option value="<?= $valueapp?>" selected="selected">[<?= $valueapp?>]</option>
+			<?php endif;?>
+			<?php $i = 0;?>
+		<?php endforeach;?>
+	</select>
+	<?php endforeach;?>
+	<br><br><input class="btn btn-default" type="submit"><br><br>
+</form>
