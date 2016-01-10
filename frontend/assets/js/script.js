@@ -1,4 +1,29 @@
+var a = false;
 var app = angular.module("pagPoli",[]);
+app.controller("log",['$scope','$http',function ($scope,$http) {
+	$scope.err = false;
+	$scope.veriLog = function (){
+		$http.post("index.php/log",
+			{user: $scope.user,
+			ps: $scope.ps})
+		.success(function (dato) {
+			if (dato.estado){
+				$scope.err = false;
+				a = true;
+				
+				document.forms["form1"].submit()
+
+			}else{
+				$scope.err = true;
+				$scope.ps = "";
+			};
+		})
+		.error(function (err) {
+			//$scope.err = true;
+			console.log(err);
+		});
+	}
+}]);
 app.controller("ocultar",['$scope', function ($scope) {
 	$scope.eva0 = true;
 	$scope.eva1 = true;

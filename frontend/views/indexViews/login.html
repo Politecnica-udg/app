@@ -1,18 +1,12 @@
-<div class="container">
-    <?php if($_SESSION['error']):?>
-        <div class="alert alert-danger alert-dismissable">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <strong>[error]!</strong> [login_error]
-        </div>
-    <?php endif;?>
-    <form class="form-signin" role="form" action="" method="post">
+<div class="container"  ng-app="pagPoli" ng-controller="log">
+    <div ng-if="err" class="alert alert-danger alert-dismissable">
+        <strong>[error]!</strong> [login_error]
+    </div>
+    <form class="form-signin" role="form" name="form1" method="POST" action="" onsubmit="return a" >
     	<img src="frontend/assets/complementos/img/logo.png" alt="Smiley face" class="img-rounded logo_udg img_center">
         <h2 class="form-signin-heading">[Ini_sec]</h2>
-        <input class="form-control" placeholder="[cod]" name="user" required="" autofocus=""><br>
-        <input class="form-control" placeholder="[pas]" required="" name="ps" type="password">
-        <label class="checkbox">
-         	<input value="remember-me" type="checkbox"> [reck]
-        </label>
-    	<button class="btn btn-lg btn-primary btn-block" type="submit">[login_index]</button>
+        <input class="form-control" placeholder="[cod]" name="user" ng-model="user" required="" autofocus=""><br>
+        <input class="form-control" placeholder="[pas]"  name="ps"  ng-model="ps" required="" type="password">
+    	<button class="btn btn-lg btn-primary btn-block" ng-click="veriLog()" type="submit">[login_index]</button>
 	</form>
 </div> <!-- /container -->

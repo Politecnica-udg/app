@@ -17,7 +17,7 @@
 		$inf = explode('.', $app);
 		require_once("frontend/controller/".$inf[0]."Controller.php");
 		$objeto = new $inf[0]();
-		$objeto->$inf[1]();
+		$objeto->$inf[1]($inf[2]);
 	}
 	function patterns($url){
 		global $url_array;
@@ -90,6 +90,11 @@
 	function jsonResponse($arr){
 		header('Content-Type: text/txt; charset=ISO-8859-1');
 		echo json_encode($arr);
+	}
+	function jsonPOST(){
+		$dato = json_decode(file_get_contents("php://input"));
+		foreach ($dato as $key => $value){$d[$key] = $value;}
+		return $d;
 	}
 	/*Funcion que funciona para remplasar partes de las plantillas
 	por los valores obtenidos de la ejecucion de otras apliaciones*/
