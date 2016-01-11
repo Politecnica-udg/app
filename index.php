@@ -84,35 +84,23 @@
 		global $conf_host;
 		header("Location: ".$conf_host['host'].$string);
 	}
+	function recorro($matriz){
+		$arr;
+        foreach($matriz as $key=>$value){
+            if (is_array($value)){
+            	$arr[$key] =  recorro($value);             	
+          	}else{
+          		$arr[$key] = utf8_encode($value);
+          	}
+       	}
+       	return $arr;
+	} 
 	/*Funcion que recibe un arreglo retornando un arreglo
 	en formato json para poder trabajar con el desde otro
 	sistema*/
 	function jsonResponse($arr){
-		header('Content-Type: text/txt; charset=ISO-8859-1');
-		echo json_encode($arr);
-		switch(json_last_error()) {
-        case JSON_ERROR_NONE:
-            echo ' - Sin errores';
-        break;
-        case JSON_ERROR_DEPTH:
-            echo ' - Excedido tamaño máximo de la pila';
-        break;
-        case JSON_ERROR_STATE_MISMATCH:
-            echo ' - Desbordamiento de buffer o los modos no coinciden';
-        break;
-        case JSON_ERROR_CTRL_CHAR:
-            echo ' - Encontrado carácter de control no esperado';
-        break;
-        case JSON_ERROR_SYNTAX:
-            echo ' - Error de sintaxis, JSON mal formado';
-        break;
-        case JSON_ERROR_UTF8:
-            echo ' - Caracteres UTF-8 malformados, posiblemente están mal codificados';
-        break;
-        default:
-            echo ' - Error desconocido';
-        break;
-    }
+		header('Content-type: application/json; charset=utf-8');
+		echo json_encode(recorro($arr));
 	}
 	function jsonPOST(){
 		$dato = json_decode(file_get_contents("php://input"));

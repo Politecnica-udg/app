@@ -24,13 +24,11 @@ app.controller("log",['$scope','$http',function ($scope,$http) {
 	}
 }]);
 app.controller("ocultar",['$scope','$http', function ($scope,$http) {
+	$scope.datos = "";
 	$scope.datosMaestros = function(){
 		$http.get("index.php/datosMaestros")
 		.success(function(dato){
-			console.log(dato);
-			if (!dato.err) {
-				$scope.cursos = dato.dato;
-			};
+			$scope.datos = dato;
 		})
 		.error(function(err){
 			console.log(err);

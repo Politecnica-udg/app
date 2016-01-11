@@ -1,25 +1,32 @@
 <div ng-app="pagPoli" ng-controller="ocultar">
 	<div class="btn-group" ng-init="datosMaestros()">
         <label class="btn btn-primary radrojo">
-            <input type="radio" ng-click="mostrar()" ng-model="t" name="options" value="1" checked>[eva0]
+            <input type="radio" ng-model="t.cin" name="options" value="0" checked>[eva0]
         </label>
         <label class="btn btn-primary radama">
-            <input type="radio" ng-click="mostrar()" ng-model="t" name="options" value="2"> [eva1]
+            <input type="radio" ng-model="t.cin" name="options" value="1"> [eva1]
         </label>
         <label class="btn btn-primary radazul">
-            <input type="radio" ng-click="mostrar()" ng-model="t" name="options" value="3"> [eva2]
+            <input type="radio" ng-model="t.cin" name="options" value="2"> [eva2]
         </label>
-        <label class="btn btn-primary radverde">
-            <input type="radio" ng-click="mostrar()" ng-model="t" name="options" value="4"> [todos]
+        <label class="btn btn-primary radnar buscar">
+            <input type="search" ng-model="s" class="form-control">
         </label>
     </div>
-    <hr>
-    <br>
 	<table class="table">
-	<tr>
-		<th>[name]</th>
-		<th>[status]</th>
-		<th>[cant]</th>
- 	</tr>
-</table>
+		<tr>
+			<th>[name]</th>
+			<th>[status]</th>
+			<th>[cant]</th>
+ 		</tr>
+ 		<tr ng-repeat="dat in datos | filter:s | filter:t">
+ 			<td>{{dat.nom_pro}}</td>
+ 			<td ng-switch on="dat.cin">
+	 			<a ng-switch-when="0" href="index.php/asigProf/{{dat.cod_prof}}"><span class="label label-danger">[eva0]</span></a>
+	 			<a ng-switch-when="1" href="index.php/asigProf/{{dat.cod_prof}}"><span class="label label-warning">[eva1]</span></a>
+ 				<a ng-switch-when="2" href="index.php/asigProf/{{dat.cod_prof}}"><span class="label label-primary">[eva2]</span</a>
+ 			</td>
+ 			<td>{{dat.total}}</td>
+ 		</tr>
+	</table>
 </div>

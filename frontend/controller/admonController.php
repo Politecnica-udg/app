@@ -9,9 +9,6 @@
 		}
 		public function datosMaestros(){
 			$datos = $this->data->datosMaestros();
-			$a = ["jaja"=>1,
-					"pepe" => "juánñ"];
-				//echo json_encode($datos,false,512);
 			return jsonResponse($datos);
 		}
 	}
