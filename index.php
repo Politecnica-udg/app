@@ -90,6 +90,29 @@
 	function jsonResponse($arr){
 		header('Content-Type: text/txt; charset=ISO-8859-1');
 		echo json_encode($arr);
+		switch(json_last_error()) {
+        case JSON_ERROR_NONE:
+            echo ' - Sin errores';
+        break;
+        case JSON_ERROR_DEPTH:
+            echo ' - Excedido tamaño máximo de la pila';
+        break;
+        case JSON_ERROR_STATE_MISMATCH:
+            echo ' - Desbordamiento de buffer o los modos no coinciden';
+        break;
+        case JSON_ERROR_CTRL_CHAR:
+            echo ' - Encontrado carácter de control no esperado';
+        break;
+        case JSON_ERROR_SYNTAX:
+            echo ' - Error de sintaxis, JSON mal formado';
+        break;
+        case JSON_ERROR_UTF8:
+            echo ' - Caracteres UTF-8 malformados, posiblemente están mal codificados';
+        break;
+        default:
+            echo ' - Error desconocido';
+        break;
+    }
 	}
 	function jsonPOST(){
 		$dato = json_decode(file_get_contents("php://input"));

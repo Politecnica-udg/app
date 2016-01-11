@@ -19,33 +19,22 @@ app.controller("log",['$scope','$http',function ($scope,$http) {
 			};
 		})
 		.error(function (err) {
-			//$scope.err = true;
 			console.log(err);
 		});
 	}
 }]);
-app.controller("ocultar",['$scope', function ($scope) {
-	$scope.eva0 = true;
-	$scope.eva1 = true;
-	$scope.eva2 = true;
-	$scope.mostrar = function () {
-		if ($scope.t ==1) {
-			$scope.eva0 = true;
-			$scope.eva1 = false;
-			$scope.eva2 = false;
-		}else if($scope.t ==2){
-			$scope.eva0 = false;
-			$scope.eva1 = true;
-			$scope.eva2 = false;
-		}else if($scope.t == 3){
-			$scope.eva0 = false;
-			$scope.eva1 = false;
-			$scope.eva2 = true;
-		}else{
-			$scope.eva0 = true;
-			$scope.eva1 = true;
-			$scope.eva2 = true;
-		};
+app.controller("ocultar",['$scope','$http', function ($scope,$http) {
+	$scope.datosMaestros = function(){
+		$http.get("index.php/datosMaestros")
+		.success(function(dato){
+			console.log(dato);
+			if (!dato.err) {
+				$scope.cursos = dato.dato;
+			};
+		})
+		.error(function(err){
+			console.log(err);
+		});
 	}
 }]);
 

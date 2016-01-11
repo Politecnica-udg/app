@@ -4,18 +4,15 @@
 	class admon{
 		var $data;
 		function __construct(){$this->data = new model_admon();}
-		public function lis_maestos(){
-			global $url_array;
-
-			if ($url_array[2]) {
-				//$mat = $this->data->materias($url_array[2]);
-				//return renderResponse(viewIndex::admon('materias.html',$mat));
-			} else {
-				$mat = $this->data->datosMaestros();
-				return renderResponse(viewTemplad::admon('listaMaestros.html',$mat));
-
-			}
-
-		}	
+		public function lis_maestos($html){
+			return renderResponse(viewTemplad::admon($html.'.html'));
+		}
+		public function datosMaestros(){
+			$datos = $this->data->datosMaestros();
+			$a = ["jaja"=>1,
+					"pepe" => "juánñ"];
+				//echo json_encode($datos,false,512);
+			return jsonResponse($datos);
+		}
 	}
 ?>

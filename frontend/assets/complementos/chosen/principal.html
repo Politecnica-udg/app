@@ -40,7 +40,7 @@
                                                 <?php if ($_SESSION['nivel'] != 12):?>
                                                      <?php foreach ($_SESSION['apps'] as $key => $value): ?>
                                                             <li>
-                                                                  <a href="index.php/<?=$_SESSION['tipo']?>/<?=$value?>/">[<?= $value?>]</a>
+                                                                  <a href="index.php/<?=$value?>/">[<?= $value?>]</a>
                                                             </li> 
                                                       <?php endforeach;?>
                                                 <?php else:?>
@@ -70,7 +70,7 @@
                               <div class="list-group">
                                     <?php if ($_SESSION['nivel'] != 12):?>
                                          <?php foreach ($_SESSION['apps'] as $key => $value): ?>
-                                                      <a href="index.php/<?=$_SESSION['tipo']?>/<?=$value?>/" class="list-group-item">[<?= $value?>]</a>
+                                                      <a href="index.php/<?=$value?>/" class="list-group-item">[<?= $value?>]</a>
                                           <?php endforeach;?>
                                     <?php else:?>
                                           <?php foreach ($_SESSION['apps'] as $key => $value): ?>
