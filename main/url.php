@@ -8,7 +8,8 @@
 		"lis_maestos" => "admon.pagHtml.listaMaestros",
 		"datosMaestros" => "admon.datosMaestros",
 		"asigProf" => "admon.pagHtml.maestroLis",
-		"datosGrupos" => "admon.datosGrupos"
+		"datosGrupos" => "admon.datosGrupos",
+		"eval_grup" => "admon.pagHtml.maestroLis"
 	];
 	patterns($URLpatterns);
 ?>
