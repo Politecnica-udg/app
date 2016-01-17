@@ -5,14 +5,12 @@ app.controller("log",['$scope','$http',function ($scope,$http) {
 	$scope.veriLog = function (){
 		$http.post("index.php/log",
 			{user: $scope.user,
-			ps: $scope.ps})
+			  ps: $scope.ps})
 		.success(function (dato) {
 			if (dato.estado){
 				$scope.err = false;
 				a = true;
-				
 				document.forms["form1"].submit()
-
 			}else{
 				$scope.err = true;
 				$scope.ps = "";
@@ -27,6 +25,18 @@ app.controller("ocultar",['$scope','$http', function ($scope,$http) {
 	$scope.datos = "";
 	$scope.datosMaestros = function(){
 		$http.get("index.php/datosMaestros")
+		.success(function(dato){
+			$scope.datos = dato;
+		})
+		.error(function(err){
+			console.log(err);
+		});
+	}
+}]);
+app.controller("grupAlumnos",['$scope', '$http', function ($scope, $http) {
+	$scope.datos =  "";
+	$scope.consulta = function (cod) {
+		$http.get("index.php/datosGrupos/"+cod)
 		.success(function(dato){
 			$scope.datos = dato;
 		})

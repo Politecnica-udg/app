@@ -1,0 +1,58 @@
+<?php global $url_array;?>
+<div ng-app="pagPoli" ng-controller="grupAlumnos">
+	<div class="text-center" id="lis_grup" ng-init="consulta(<?= $url_array['2']?>)">[lis_grup]</div>
+	<div class="row">
+		<div class="col-md-9 col-md-push-3"><p class="text_ls">[name]: <?= utf8_encode($_SESSION['nombre'])?></p></div>
+		<div class="col-md-3 col-md-pull-9"><p class="text_ls">[cod]: <?= $_SESSION['codigo']?></p></div>
+	</div>
+	<pre>[ins_ci]</pre>
+	<table class="table table-striped" id="califiacion">
+	 	<tr>
+			<th>[carrera]</th>
+			<th>[Gdo]</th>
+			<th>[Grupo]</th>
+			<th>[Asignatura]</th>
+			<th>[lista]</th>
+			<th>[imprimir]</th>
+	 	</tr>
+	 	<tr ng-repeat="dat in datos">
+	 		<td>{{dat.abr_car}}</td>
+	 		<td>{{dat.gdo_prof}}</td>
+	 		<td>{{dat.gpo_prof}}</td>
+	 		<td>{{dat.nom_pes}}</td>
+	 		<td ng-switch on="dat.cin">
+	 			<a ng-switch-when="0" href="index.php/eval_grup/?m={{dat.casg_prof}}&c={{dat.ccar_prof}}&g={{dat.gdo_prof}}&gr={{dat.gpo_prof}}">
+	 				<span class="label label-default">
+	 					<span class="glyphicon glyphicon-list-alt"></span>
+	 					[!revisado]
+	 				</span>
+	 			</a>
+	 			<a ng-switch-when="1" href="index.php/eval_grup/?m={{dat.casg_prof}}&c={{dat.ccar_prof}}&g={{dat.gdo_prof}}&gr={{dat.gpo_prof}}">
+	 				<span class="label label-warning">
+	 					<span class="glyphicon glyphicon-list-alt"></span>
+	 					[enpro]
+	 				</span>
+	 			</a>
+ 				<span ng-switch-when="2" class="label label-primary">
+ 					<span class="glyphicon glyphicon-ok-sign"></span>
+ 					[revisado]
+ 				</span>
+ 			</td>
+ 			
+ 			<!--Imprimir-->
+ 			<td ng-switch on="dat.cin">
+ 				<span ng-switch-when="0" class="label label-danger">
+ 					<span class="glyphicon glyphicon-print"></span>
+ 				</span>
+ 				<span ng-switch-when="1" class="label label-danger">
+ 					<span class="glyphicon glyphicon-print"></span>
+ 				</span>
+	 			<a ng-switch-when="2" href="index.php/pdf/?m={{dat.casg_prof}}&c={{dat.ccar_prof}}&g={{dat.gdo_prof}}&gr={{dat.gpo_prof}}&t={{dat.tur_prof}}">
+	 				<span class="label label-success">
+ 						<span class="glyphicon glyphicon-print"></span>
+ 					</span>
+	 			</a>
+ 			</td>
+	 	</tr>
+	</table>
+</div>

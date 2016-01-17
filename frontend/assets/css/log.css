@@ -122,3 +122,6 @@ body {
   display: block;
   margin:0 auto 0 auto;
 }
+.alert-log{
+  transition: all 3.3s ease-in-out 0s;
+}

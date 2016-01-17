@@ -6,5 +6,9 @@
 			$consu = new asig_prof();
 			return $consu->getMaestros();
 		}
+		public function datosGrupos($cod){
+			$consu =  new asig_prof();
+			return $consu->getMaterias($cod);
+		}
 	}
 ?>

@@ -1,0 +1,50 @@
+<div ng-app="pagPoli" ng-controller="cali" ng-init="calDat(<?= $_SESSION['codigo']?>)">
+	<ul class="list-group">
+  		<li class="list-group-item">
+    		<span class="badge">{{calif}}<?= $arr['gen'][0]?></span>
+    		<ins>[prom]</ins>
+  		</li>
+	</ul>
+	<table class="table table-bordered">
+		<tr>
+			<th>[Gdo]</th>
+			<th>[Grupo]</th>
+			<th>[Asignatura]</th>
+			<th>[tipo]</th>
+			<th>[cali]</th>
+		</tr>
+
+	</table>
+</div>
+<table class="table table-bordered">
+
+	<?php foreach ($arr['mate'] as $key => $value): ?>
+		<tr>
+			<td><?=utf8_encode($value['gdo_cal'])?></td>
+			<td><?=utf8_encode($value['gpo_cal'])?></td>
+			<td><?=utf8_encode($value['nom_pes'])?></td>
+			<?php if ($value['nop_cal']%2 == 1):?>
+				<td>Ordinario</td>
+			<?php else:?>
+				<td>Extraordinario</td>
+			<?php endif;?>
+			<?php if ($value['evaluar']== 1):?>
+				<?php if ($value['st_nex'] == 0):?>
+					<?php if ($value['num_cal'] >= 60):?>
+						<td><?=utf8_encode($value['num_cal'])?></td>
+					<?php else:?>
+						<td><?=utf8_encode($value['num_cal2'])?></td>
+					<?php endif;?>
+				<?php else:?>
+					<?php if ($value['num_cal'] >= 60):?>
+						<td>[apro]</td>
+					<?php else:?>
+						<td>[!apro]</td>
+					<?php endif;?>
+				<?php endif;?>	
+			<?php else:?>
+				<td>Falta evaluar</td>
+			<?php endif;?> 
+		</tr>
+	<?php endforeach; ?>
+</table>
