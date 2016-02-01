@@ -27,5 +27,17 @@
 			$consu =  new asig_prof();
 			return $consu->getGrabar($op);
 		}
+		public function carrera($con){
+			$consu = new evaluacion();
+			return $consu->getCarrera($con);
+		}
+		public function mat($con){
+			$consu = new evaluacion();
+			return $consu->getMat($con);
+		}
+		public function grupo(){
+			$consu = new evaluacion();
+			return $consu->getGrupo();
+		}
 	}
 ?>

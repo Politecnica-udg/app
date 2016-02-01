@@ -14,7 +14,8 @@
 		"datAl" => "admon.datAl",
 		"saveCal" => "admon.saveCal",
 		"saveFal" => "admon.saveFal",
-		"grabarM" => "admon.grabarM"
+		"grabarM" => "admon.grabarM",
+		"pdf" => "admon.pdf_M"
 	];
 	patterns($URLpatterns);
 ?>
