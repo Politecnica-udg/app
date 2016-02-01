@@ -45,6 +45,58 @@ app.controller("grupAlumnos",['$scope', '$http', function ($scope, $http) {
 		});
 	}
 }]);
+app.controller("evaluarAlum",['$scope', '$http', function ($scope, $http) {
+	$scope.datos = "";
+	$scope.lista = function () {
+		url = window.location.search;
+		$http.get("index.php/datAl/"+url)
+		.success(function(dato){
+			$scope.datos = dato;
+			console.log($scope.datos);
+		})
+		.error(function(err){
+			console.log(err);
+		});
+	}
+	$scope.saveFal = function (id,fal_al) {
+		$http.post("index.php/saveFal",{
+			id_al: 	id,
+			fal: 	fal_al,
+			cTotal: $scope.datos.clas})
+		.success(function (dato) {
+		})
+		.error(function (err) {
+			console.log(err);
+		});
+	}
+	$scope.saveCal = function (id,cal_al) {
+		if(cal_al >100){
+			alert("Tiene que ser un numero menor o igual a 100");
+		}else{
+			$http.post("index.php/saveCal",{
+				id_al: 	id,
+				cal: 	cal_al})
+			.success(function (dato) {
+			})
+			.error(function (err) {
+				console.log(err);
+			});
+		}
+	}
+	$scope.grabar = function(op_m){
+		url = window.location.search;
+		$http.post("index.php/grabarM/"+url,{
+			op: op_m
+		})
+		.success(function(dato){
+			alert("Datos Grabados");
+			 location.href="index.php";
+		})
+		.error(function(err){
+			console.log(err);
+		});
+	}
+}]);
 
 /**----------------------------------------------------------------------------------------
 ----------------------------- Codigo de Google analytics. -----------------------

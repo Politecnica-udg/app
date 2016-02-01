@@ -118,6 +118,11 @@
 	function hola(){
 		return "hola :D";
 	}
+	function seeArray($arr){
+		echo "<pre>";
+		print_r($arr);
+		echo "</pre>";
+	}
 	/*Inclulle el archivo de configuracion del sistema*/
 	require_once 'main/settings.php';
 ?>

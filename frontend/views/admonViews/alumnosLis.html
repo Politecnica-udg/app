@@ -1,0 +1,62 @@
+<div ng-app="pagPoli" ng-controller="evaluarAlum" ng-init="lista()">
+	<div class="alert alert-warning" role="alert">
+    	Maestro, si aparecen alumnos que no estén en su <a class="alert-link">lista de asistencia</a> favor de enviarlos a control escolar
+	</div>
+	<div class="text-center" id="lis_grup">
+		[Grupo] de <?=$_GET['g']?><?=$_GET['gr']?>
+	</div>
+	<div class="row">
+  		<div class="col-md-9 col-md-push-3">
+  			<p class="text_ls">[name]: <?= utf8_encode($_SESSION['nombre'])?></p>
+  		</div>
+ 		<div class="col-md-3 col-md-pull-9">
+ 			<p class="text_ls">[cod]: <?= $_SESSION['codigo']?></p>
+ 		</div>
+	</div>
+	<pre>[ins_cia]</pre>
+	<h3 ng-if="datos.alumnos.length == 0">No hay información. Si es un error favor de ir a reportarlo.</h3>
+	<form>
+		<div class="row">
+            <div class="col-md-9 col-md-push-3">
+                <p class="text_ls">
+                    <input type="text" min='0' max='300' class="form-control" placeholder="{{datos.clas}}" ng-model="datos.clas">
+                </p>
+            </div>
+            <div class="col-md-3 col-md-pull-9"><p class="text_ls">[tasistencias]</p></div>
+        </div>
+        <table class="table table-striped" id="califiacion">
+        	<tr>
+                <th>lol</th>
+                <th>[cod]</th>
+                <th>[name]</th>
+                <th>[faltas]</th>
+                <th>[evaluacion]</th>
+            </tr>
+            <tr ng-repeat="alumno in datos.alumnos">
+                <td>{{alumno.id_ev}}</td>
+            	<td>{{alumno.cod_ev}}</td>
+            	<td>{{alumno.nom_ubi}}</td>
+            	<td>
+            		<input type="text" 
+            				min='0' max='100' 
+            				class="form-control" 
+            				ng-model="alumno.tfal_int_ev"
+            				placeholder="{{alumno.tfal_int_ev}}"
+                            ng-change="saveFal(alumno.id_ev,alumno.tfal_int_ev)"
+            				>
+            	</td>
+            	<td>
+            		<input	type="text" 
+            				min='0' max='100'
+            				class="form-control"
+            				ng-model="alumno.cal_int_ev"
+            				placeholder="{{alumno.cal_int_ev}}"
+                            ng-change="saveCal(alumno.id_ev,alumno.cal_int_ev)"
+            				>
+            	</td>
+            </tr>
+        </table>
+        <button type="submit" ng-click="grabar(1)" class="btn btn-default">[grabar]</button>
+        <button type="submit" ng-click="grabar(2)" class="btn btn-default">[cerrar_enviar]</button>
+	</form>
+</div>
