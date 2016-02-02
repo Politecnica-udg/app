@@ -45,6 +45,22 @@ app.controller("grupAlumnos",['$scope', '$http', function ($scope, $http) {
 		});
 	}
 }]);
+app.controller("alumnoEva",['$scope', '$http', function ($scope, $http) {
+	$scope.datos = "";
+	$scope.check = false;
+	$scope.materias_Al = function(codigo){
+		$http.get("index.php/materias_Al")
+		.success(function (dato){
+			$scope.datos = dato;
+		})
+		.error(function (err) {
+			console.log(err);
+		});
+	}
+	$scope.chec = function () {
+		$scope.check = true;
+	}
+}]);
 app.controller("evaluarAlum",['$scope', '$http', function ($scope, $http) {
 	$scope.datos = "";
 	$scope.lista = function () {

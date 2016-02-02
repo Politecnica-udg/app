@@ -1,0 +1,21 @@
+<div class="panel panel-default" ng-app="pagPoli" ng-controller="alumnoEva" ng-init="materias_Al()">
+      <!-- Default panel contents -->
+      <div class="panel-heading"><?=utf8_encode($_SESSION['nombre'])?></div>
+      <div class="panel-body">
+            <p>[alum_e]</p>
+      </div>
+      <form method="post" role="form" action="index.php/preguntas/">
+            <p class="help-block">[text_help_eval]</p>
+            <div class="radio" ng-repeat="dato in datos">
+                  <label ng-switch on="dato.evaluar">
+                        <input ng-switch-when="0" type="radio" ng-click="chec()" name="materia" id="materia_eval" value="{{dato.id_cal}}">
+                        <input ng-switch-when="1" type="radio" name="materia" id="materia_eval" value="{{dato.id_cal}}" disabled>
+                        {{dato.nom_pes}}
+                  </label>
+            </div>
+            <button ng-id="datos.length != 0" ng-show="check" type="submit" class="btn btn-default">
+                  [evalu]
+            </button>
+      </form>
+      <br>
+</div>

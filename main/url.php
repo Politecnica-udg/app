@@ -15,7 +15,11 @@
 		"saveCal" => "admon.saveCal",
 		"saveFal" => "admon.saveFal",
 		"grabarM" => "admon.grabarM",
-		"pdf" => "admon.pdf_M"
+		"pdf" => "admon.pdf_M",
+		"alum_e" => "studen.pagHtml.alum_e",
+		"materias_Al" => "studen.materias_Al",
+		"preguntas" => "studen.pagHtml.preguntas",
+		"preguntasSave" => "studen.preguntasSave"
 	];
 	patterns($URLpatterns);
 ?>
