@@ -15,13 +15,13 @@
 			}
 		}
 		public function log(){
-			$datos = jsonPOST();
+			$datos = $_GET;
 			$dat = $this->data->userData($datos['user']);
 			if ($dat['nip'] == $datos['ps']) {
 				$_SESSION = $dat;
-				return jsonResponse(["estado" =>true]);
+				return jsonResponse(["estado" =>"true"]);
 			}
-			return jsonResponse(["estado" =>false]);
+			return jsonResponse(["estado" =>"false"]);
 		}
 		public function e404(){
 			return renderResponse(viewTemplad::white("404.html"));

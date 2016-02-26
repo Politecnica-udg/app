@@ -3,11 +3,9 @@ var app = angular.module("pagPoli",[]);
 app.controller("log",['$scope','$http',function ($scope,$http) {
 	$scope.err = false;
 	$scope.veriLog = function (){
-		$http.post("index.php/log",
-			{user: $scope.user,
-			  ps: $scope.ps})
+		$http.get("index.php/log?user="+$scope.user+"&ps="+$scope.ps)
 		.success(function (dato) {
-			if (dato.estado){
+			if (dato.estado == "true"){
 				$scope.err = false;
 				a = true;
 				document.forms["form1"].submit()
