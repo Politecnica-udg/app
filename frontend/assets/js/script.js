@@ -73,10 +73,7 @@ app.controller("evaluarAlum",['$scope', '$http', function ($scope, $http) {
 		});
 	}
 	$scope.saveFal = function (id,fal_al) {
-		$http.post("index.php/saveFal",{
-			id_al: 	id,
-			fal: 	fal_al,
-			cTotal: $scope.datos.clas})
+		$http.get("index.php/saveFal?id_al="+id+"&fal="+fal_al+"&cTotal"+$scope.datos.clas)
 		.success(function (dato) {
 		})
 		.error(function (err) {
@@ -87,9 +84,7 @@ app.controller("evaluarAlum",['$scope', '$http', function ($scope, $http) {
 		if(cal_al >100){
 			alert("Tiene que ser un numero menor o igual a 100");
 		}else{
-			$http.post("index.php/saveCal",{
-				id_al: 	id,
-				cal: 	cal_al})
+			$http.get("index.php/saveCal?id_al="+id+"&cal="+cal_al)
 			.success(function (dato) {
 			})
 			.error(function (err) {
@@ -99,12 +94,11 @@ app.controller("evaluarAlum",['$scope', '$http', function ($scope, $http) {
 	}
 	$scope.grabar = function(op_m){
 		url = window.location.search;
-		$http.post("index.php/grabarM/"+url,{
-			op: op_m
-		})
+		$http.get("index.php/grabarM/"+url+"?op"+op_m)
 		.success(function(dato){
+			console.log(dato);
 			alert("Datos Grabados");
-			 location.href="index.php";
+			 //location.href="index.php";
 		})
 		.error(function(err){
 			console.log(err);

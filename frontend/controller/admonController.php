@@ -27,15 +27,15 @@
 			return jsonResponse($datos);
 		}
 		public function saveCal(){
-			$datos = jsonPOST();
+			$datos = $_GET;
 			$this->data->saveCal($datos);
 		}
 		public function saveFal(){
-			$datos = jsonPOST();
+			$datos = $_GET;
 			$this->data->saveFal($datos);
 		}
 		public function grabarM(){
-			$datos = jsonPOST();
+			$datos = $_GET;
 			$this->data->grabar($datos['op']);
 		}
 		public function pdf_M(){
