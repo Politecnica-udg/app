@@ -26,7 +26,7 @@
 			}
 		}
 		public function getGuardarFal($value){
-			$this->query("UPDATE evaluacion SET tfal_int_ev='$value[fal]', tclas_int_ev='$value[cTotal]' WHERE id_ev = '$value[id_al]'");
+			$this->query("UPDATE evaluacion SET tfal_int_ev='$value[fal]', tclas_int_ev = '$value[cTotal]' WHERE id_ev = '$value[id_al]'");
 		}
 		public function getGuardarCal($value){
 			$this->query("UPDATE evaluacion SET cal_int_ev='$value[cal]' WHERE id_ev = '$value[id_al]'");

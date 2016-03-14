@@ -73,7 +73,7 @@ app.controller("evaluarAlum",['$scope', '$http', function ($scope, $http) {
 		});
 	}
 	$scope.saveFal = function (id,fal_al) {
-		$http.get("index.php/saveFal?id_al="+id+"&fal="+fal_al+"&cTotal"+$scope.datos.clas)
+		$http.get("index.php/saveFal?id_al="+id+"&fal="+fal_al+"&cTotal="+$scope.datos.clas)
 		.success(function (dato) {
 		})
 		.error(function (err) {
@@ -94,11 +94,11 @@ app.controller("evaluarAlum",['$scope', '$http', function ($scope, $http) {
 	}
 	$scope.grabar = function(op_m){
 		url = window.location.search;
-		$http.get("index.php/grabarM/"+url+"?op"+op_m)
+		$http.get("index.php/grabarM/"+url+"&op="+op_m)
 		.success(function(dato){
 			console.log(dato);
 			alert("Datos Grabados");
-			 //location.href="index.php";
+			location.href="index.php";
 		})
 		.error(function(err){
 			console.log(err);
