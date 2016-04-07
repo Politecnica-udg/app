@@ -42,7 +42,7 @@
 			}
 		}
 		public function getGrabar($op){
-			$this->query(" UPDATE asig_prof SET cin = '$op' WHERE id='$_GET[id]'");
+			$this->query(" UPDATE asig_prof SET cin = '$op' , tclas_int = '$_GET[fal]' WHERE id='$_GET[id]'");
 		}
 	}
 ?>

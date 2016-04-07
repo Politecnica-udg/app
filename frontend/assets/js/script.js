@@ -94,7 +94,7 @@ app.controller("evaluarAlum",['$scope', '$http', function ($scope, $http) {
 	}
 	$scope.grabar = function(op_m){
 		url = window.location.search;
-		$http.get("index.php/grabarM/"+url+"&op="+op_m)
+		$http.get("index.php/grabarM/"+url+"&op="+op_m+"&fal="+$scope.datos.clas)
 		.success(function(dato){
 			console.log(dato);
 			alert("Datos Grabados");
