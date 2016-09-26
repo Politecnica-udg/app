@@ -1,7 +1,6 @@
 <?php
 	require_once 'frontend/model/table/asig_prof.php';
 	require_once 'frontend/model/table/evaluacion.php';
-
 	class model_admon{
 		public function datosMaestros(){
 			$consu = new asig_prof();
