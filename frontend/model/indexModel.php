@@ -6,5 +6,9 @@
 			$consu = new user();
 			return $consu->getDatos($user);
 		}
+		public function pwNew($pw, $cod){
+			$consu = new user();
+			return $consu->getUpPW($pw, $cod);
+		}
 	}
 ?>

@@ -106,6 +106,33 @@ app.controller("evaluarAlum",['$scope', '$http', function ($scope, $http) {
 	}
 }]);
 
+
+app.controller("pwNew",['$scope', '$http', function ($scope, $http) {
+	$scope.confirmar = function () {
+		if ($scope.pw1 == $scope.pw2) {
+			$scope.pwaser = "has-success";
+		}else{
+			$scope.pwaser = "has-error";
+		};
+	}
+	$scope.guardar = function (ID) {
+		if ($scope.pw1 == $scope.pw2) {
+			$http.post("index.php/pwNew/",{
+				pw 		: $scope.pw1,
+				id 		: ID})
+			.success(function (dat) {
+				alert("Contraseña Cambiada");
+				$scope.pw1 = "";
+				$scope.pw2 = "";
+			})
+			.error(function (err) {
+				console.log(err);
+			});
+		}else{
+			alert("No son iguales");
+		};
+	}
+}]);
 /**----------------------------------------------------------------------------------------
 ----------------------------- Codigo de Google analytics. -----------------------
 ----------------------------------------------------------------------------------------  

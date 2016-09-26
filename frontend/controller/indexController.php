@@ -4,6 +4,9 @@
 	class index{
 		var $data;
 		function __construct(){$this->data = new model_index();}
+		public function pagHtml($html){
+			return renderResponse(viewTemplad::page($html.'.html'));
+		}
 		public function inicio(){
 			if ($_SESSION) {
 				$str_datos = file_get_contents("assets/complementos/apps.json");
@@ -41,12 +44,13 @@
     			$app['app'] = [ 0 => "eval_grup",
     						1 => "lis_maestos",
 							2 => "alum_e",
-							3 => "app_admin",
-							4 => "ips",
-							5 => "ipsR",
-							6 => "lis_grupo"];
+							3 => "app_admin"];
 				return renderResponse(viewTemplad::pageChosen('adapp.html',$app));
 			}
+		}
+		public function pwNew(){
+			$dat = jsonPOST();
+			$this->data->pwNew($dat['pw'],$dat['id']);
 		}
 	}
 ?>

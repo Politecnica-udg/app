@@ -1,0 +1,12 @@
+<div class="panel panel-primary marjen1" ng-controller="pwNew">
+	<div class="panel-heading cent">Cambio de Contraseña</div>
+    <div class="panel-body">
+    	<div ng-class="pwaser">
+    		<input type="password" class="form-control" ng-change="confirmar()" ng-model="pw1" placeholder="Contraseña Nueva"><br>
+    	</div>
+    	<div ng-class="pwaser">
+    		<input type="password" class="form-control" ng-change="confirmar()" ng-model="pw2" placeholder="Repetir Contraseña"><br>
+    	</div>        
+    </div>
+    <button type="submit" ng-click="guardar(<?=$_SESSION['codigo']?>)" class="btn btn-default">Guardar</button>
+</div>

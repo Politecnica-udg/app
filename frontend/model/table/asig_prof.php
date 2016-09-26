@@ -10,8 +10,11 @@
 		public function getMaestros(){
 			global $conf_poli;
 			$query = $this->mysql->query("SELECT cod_prof, nom_pro, cin, COUNT(*) AS total FROM asig_prof INNER JOIN profesores on cod_pro=cod_prof WHERE cal_prof='$conf_poli[cal_prof]' GROUP BY cod_prof, cin ORDER BY nom_pro; ");
-			while ($reg=$query->fetch_array())
-      			$data[] = $reg;
+			while ($reg=$query->fetch_array()){
+				if ($reg['nom_pro']!= '') {
+					$data[] = $reg;
+				}
+			}
       		return $data;
 		}
 		public function getMaterias($cod){

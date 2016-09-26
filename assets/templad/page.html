@@ -40,7 +40,7 @@
                                                       </li> 
                                                 <?php endforeach;?>
                                                 <li class="divider"></li>
-                                                <li><a href="index.php/perfil/editar/">[edit_perfil]</a></li>
+                                                <li><a href="index.php/editP/">[edit_perfil]</a></li>
                                                 <li><a href="index.php/destroy/">[login_distroy]</a></li>
 
                                           </ul>
@@ -51,7 +51,7 @@
             </div><!-- /.navbar -->
             <div class="container">
                   <div class="row row-offcanvas row-offcanvas-right">
-                        <div class="col-xs-12 col-sm-9">
+                        <div class="col-xs-12 col-sm-9" ng-app="pagPoli">
                               {container}
                         </div><!--/span-->
                         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
@@ -67,7 +67,7 @@
                   </div>
             </div> <!-- /container -->
             <script src="js/jquery.min.js"></script>
-            <script src="node_modules/angular/angular.js"></script>
+            <script src="node_modules/angular/angular.min.js"></script>
             <script src="js/bootstrap.min.js"></script>
             <script src="js/script.min.js"></script>
       </body>
