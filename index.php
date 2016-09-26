@@ -1,13 +1,16 @@
 <?php
-	/*Variables de sesion, url array
+	/*Variables de sesioniii, url array
 	y configuracion del host*/
 	session_start();
+	error_reporting (0);
 	$url_array;
 	$conf_host;
 	/*Funcion para obtener la url*/
 	function URL_short(){
-		$url = $_SERVER['PATH_INFO'];
+		if ($_SERVER['PATH_INFO']) {
+			$url = $_SERVER['PATH_INFO'];
 	    	return $url;
+		}
 	}
 	/*Funcion para cargar las aplicaciones
 	en el sistema
@@ -17,7 +20,8 @@
 		$inf = explode('.', $app);
 		require_once("frontend/controller/".$inf[0]."Controller.php");
 		$objeto = new $inf[0]();
-		$objeto->$inf[1]($inf[2]);
+		$metodo = $inf[1];
+		$objeto->$metodo($inf[2]);
 	}
 	function patterns($url){
 		global $url_array;
@@ -31,7 +35,7 @@
 			crearObjeto($url[$valor]);
 		}else{
 			if ($url['404']) {
-				crearObjeto($url['404']);
+				httpResponse("index.php/404");
 			}else{
 				echo "404";
 			}
@@ -50,7 +54,8 @@
 	/*Funcion para cargar el diccionario de palabras y
 	hacer el cambio por las claves en las paginas.*/
     function lang($tem){
-    	$str_datos = file_get_contents("frontend/assets/languages/es_MX.json");
+    	global $conf_host;
+    	$str_datos = file_get_contents($conf_host['hlang']."es_MX.json");
     	$lang = json_decode($str_datos,true);
 		foreach($lang as $clave => $valor ){
 			$tem = str_replace('['.$clave.']',$valor,$tem);
@@ -94,6 +99,17 @@
           	}
        	}
        	return $arr;
+	}
+	function decode($matriz){
+		$arr;
+        foreach($matriz as $key=>$value){
+            if (is_array($value)){
+            	$arr[$key] =  recorro($value);             	
+          	}else{
+          		$arr[$key] = utf8_decode($value);
+          	}
+       	}
+       	return $arr;
 	} 
 	/*Funcion que recibe un arreglo retornando un arreglo
 	en formato json para poder trabajar con el desde otro
@@ -104,8 +120,7 @@
 	}
 	function jsonPOST(){
 		$dato = json_decode(file_get_contents("php://input"));
-		foreach ($dato as $key => $value){$d[$key] = $value;}
-		return $d;
+		return decode($dato);
 	}
 	/*Funcion que funciona para remplasar partes de las plantillas
 	por los valores obtenidos de la ejecucion de otras apliaciones*/

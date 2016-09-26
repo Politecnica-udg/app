@@ -4,7 +4,7 @@ module.exports = function(grunt) {
         uglify: {
             min: {
                 files: {
-                    'frontend/assets/js/script.min.js' : 'frontend/assets/js/script.js'
+                    'js/script.min.js' : 'js/script.js'
                 }
             }
         },
@@ -17,7 +17,7 @@ module.exports = function(grunt) {
                     sourceMap: true
                 },
                 files: {
-                    "frontend/assets/css/style.css": "frontend/assets/less/**/style.less"
+                    "css/style.css": "less/**/style.less"
                 }
             },
         },
@@ -26,11 +26,11 @@ module.exports = function(grunt) {
                 livereload: true
             },
             less: {
-                files: ['frontend/assets/less/*.less'],
+                files: ['less/*.less'],
                 tasks: ['less']
             },
             uglify: {
-                files: ['frontend/assets/js/**/*.js'],
+                files: ['js/**/*.js'],
                 tasks: ['uglify']
             }
         },

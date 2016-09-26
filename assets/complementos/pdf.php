@@ -1,5 +1,5 @@
 <?php
-	require 'frontend/assets/complementos/fpdf/fpdf.php';
+	require 'assets/complementos/fpdf/fpdf.php';
 	class pdf extends FPDF {
 		var $carrera;
 		var $materia;
@@ -11,7 +11,7 @@
 			$this->ciclo = $c;
 		}
 		public function Header(){
-   			$this->Image('frontend/assets/complementos/img/escudoudg.jpg' , 2 ,2, 35 , 38,'JPG');
+   			$this->Image('assets/complementos/img/escudoudg.jpg' , 2 ,2, 35 , 38,'JPG');
 			$this->SetFont('Arial','B',12);
 			$this->Cell(30);
 			$this->Cell(22,3,'CICLO');

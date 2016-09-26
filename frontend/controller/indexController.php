@@ -6,7 +6,7 @@
 		function __construct(){$this->data = new model_index();}
 		public function inicio(){
 			if ($_SESSION) {
-				$str_datos = file_get_contents("frontend/assets/complementos/apps.json");
+				$str_datos = file_get_contents("assets/complementos/apps.json");
     			$app = json_decode($str_datos,true);
     			$_SESSION['apps'] = $app[$_SESSION['nivel']];
 				return renderResponse(viewTemplad::page("principal.html"));
@@ -33,10 +33,10 @@
 		public function app_admin(){
 			if ($_POST) {
 				$json = json_encode($_POST);
-				file_put_contents("frontend/assets/complementos/apps.json", $json);
+				file_put_contents("assets/complementos/apps.json", $json);
 				return HttpResponse('index.php/app_admin');
 			}else{
-				$str_datos = file_get_contents("frontend/assets/complementos/apps.json");
+				$str_datos = file_get_contents("assets/complementos/apps.json");
     			$app['user'] = json_decode($str_datos,true);
     			$app['app'] = [ 0 => "eval_grup",
     						1 => "lis_maestos",

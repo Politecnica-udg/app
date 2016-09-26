@@ -40,7 +40,7 @@
 		}
 		public function pdf_M(){
 			global $conf_poli;
-			require_once 'frontend/assets/complementos/pdf.php';
+			require_once 'assets/complementos/pdf.php';
 			$carr=$this->data->carrera($_GET['c']);
 			$mat=$this->data->mat($_GET['m']);
 			$dato=$this->data->grupo();

@@ -1,23 +1,19 @@
 <?php
-	class user extends datebase{
-		function __construct(){parent::__construct($this->tableName(),$this->rules(),$this->attributeLabels(),$this->getIdDefecto());}
-		public static function tableName(){
-			return 'user';
+	class user{
+		private $mysql;
+		function __construct(){
+			$this->mysql = new mysqli(host,user,pw,db);
+			if ($mysql->connect_error) {
+				die("Problemas con la conexion a la base de datos");
+			}
 		}
-		public function rules(){
-			return ['codigo','nip','email','nivel','tipo','nombre','grado'];
-		}
-		public function attributeLabels(){
-			return ['codigo'=>'codigo',
-					'nip'=>'nip',
-					'email'=>'email',
-					'nivel'=>'nivel',
-					'tipo'=>'tipo',
-					'nombre'=>'nombre',
-					'grado'=>'grado'];
-		}
-		public function getIdDefecto(){
-			return 'codigo';
+		public function getDatos($user){
+			$query = $this->mysql->query("SELECT * FROM user WHERE codigo = '$user' ");
+			if ($reg=$query->fetch_array())
+      			return $reg;
+		}	
+		function __destruct(){
+			$this->mysql->close();
 		}
 	}
 ?>

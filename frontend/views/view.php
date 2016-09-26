@@ -5,7 +5,7 @@
 				'Title' => "Escuela Politecnica Guadalajara",
 				'container' => dinamic("frontend/views/indexViews/".$html, $arr)
 			];
-			$templad = loadPage("frontend/assets/templad/base.html");
+			$templad = loadPage("assets/templad/base.html");
 			$mostrar = remplas($valores,$templad);
 			return $mostrar;
 		}
@@ -14,7 +14,7 @@
 				'Title' => "Escuela Politecnica Guadalajara",
 				'container' => dinamic("frontend/views/indexViews/".$html, $arr)
 			];
-			$templad = dinamic("frontend/assets/templad/page.html");
+			$templad = dinamic("assets/templad/page.html");
 			$mostrar = remplas($valores,$templad);
 			return $mostrar;
 		}
@@ -23,7 +23,7 @@
 			'Title' => "Escuela Politecnica Guadalajara",
 			'container' => dinamic("frontend/views/admonViews/".$html,$arr)
 			];
-			$templad = dinamic("frontend/assets/templad/page.html");
+			$templad = dinamic("assets/templad/page.html");
 			$mostrar = remplas($valores,$templad);
 			return $mostrar;
 		}
@@ -32,7 +32,7 @@
 			'Title' => "Escuela Politecnica Guadalajara",
 			'container' => dinamic("frontend/views/studenViews/".$html,$arr)
 			];
-			$templad = dinamic("frontend/assets/templad/page.html");
+			$templad = dinamic("assets/templad/page.html");
 			$mostrar = remplas($valores,$templad);
 			return $mostrar;
 		}
@@ -41,7 +41,7 @@
 			'Title' => "Escuela Politecnica Guadalajara",
 			'container' => dinamic("frontend/views/indexViews/".$html,$arr)
 			];
-			$templad = dinamic("frontend/assets/complementos/chosen/principal.html");
+			$templad = dinamic("assets/complementos/chosen/principal.html");
 			$mostrar = remplas($valores,$templad);
 			return $mostrar;
 		}
