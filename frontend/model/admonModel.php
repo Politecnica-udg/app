@@ -1,6 +1,7 @@
 <?php
 	require_once 'frontend/model/table/asig_prof.php';
 	require_once 'frontend/model/table/evaluacion.php';
+	require_once 'frontend/model/table/autM.php';
 	class model_admon{
 		public function datosMaestros(){
 			$consu = new asig_prof();
@@ -37,6 +38,10 @@
 		public function grupo(){
 			$consu = new evaluacion();
 			return $consu->getGrupo();
+		}
+		public function saveFAM($a){
+			$consu = new autM();
+			return $consu->getSaveFAM($a);;
 		}
 	}
 ?>

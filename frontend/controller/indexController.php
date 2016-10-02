@@ -44,7 +44,8 @@
     			$app['app'] = [ 0 => "eval_grup",
     						1 => "lis_maestos",
 							2 => "alum_e",
-							3 => "app_admin"];
+							3 => "app_admin",
+							4 => "autEM"];
 				return renderResponse(viewTemplad::pageChosen('adapp.html',$app));
 			}
 		}
