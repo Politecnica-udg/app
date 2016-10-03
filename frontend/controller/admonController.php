@@ -68,5 +68,9 @@
 			}
 			$pdf->Output();
 		}
+		public function saveFAM(){
+			$this->data->saveFAM($_POST);
+			return httpResponse("index.php/");
+		}
 	}
 ?>

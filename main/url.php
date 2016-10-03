@@ -21,7 +21,9 @@
 		"preguntas" 	=> "studen.pagHtml.preguntas",
 		"preguntasSave" => "studen.preguntasSave",
 		"editP"			=> "index.pagHtml.editP",
-		"pwNew"			=> "index.pwNew"
+		"pwNew"			=> "index.pwNew",
+		"autEM"			=> "admon.pagHtml.autEM",
+		"saveFAM"		=> "admon.saveFAM"
 	];
 	patterns($URLpatterns);
 ?>
