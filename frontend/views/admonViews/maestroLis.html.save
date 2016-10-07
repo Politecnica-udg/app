@@ -10,7 +10,6 @@
 	 	<tr>
 			<th>[carrera]</th>
 			<th>[Gdo]</th>
-                        <th>[Tno]</th>
 			<th>[Grupo]</th>
 			<th>[Asignatura]</th>
 			<th>[lista]</th>
@@ -19,17 +18,16 @@
 	 	<tr ng-repeat="dat in datos">
 	 		<td>{{dat.abr_car}}</td>
 	 		<td>{{dat.gdo_prof}}</td>
-                        <td>{{dat.tur_prof}}</td>
 	 		<td>{{dat.gpo_prof}}</td>
 	 		<td>{{dat.nom_pes}}</td>
 	 		<td ng-switch on="dat.cin">
-	 			<a ng-switch-when="0" href="index.php/alum_lis/?m={{dat.casg_prof}}&c={{dat.ccar_prof}}&g={{dat.gdo_prof}}&gr={{dat.gpo_prof}}&id={{dat.id}}&t={{dat.tur_prof}}">
+	 			<a ng-switch-when="0" href="index.php/alum_lis/?m={{dat.casg_prof}}&c={{dat.ccar_prof}}&g={{dat.gdo_prof}}&gr={{dat.gpo_prof}}&id={{dat.id}}&t&t={{dat.tur_prof}}={{dat.tur_prof}}">
 	 				<span class="label label-default">
 	 					<span class="glyphicon glyphicon-list-alt"></span>
 	 					[!revisado]
 	 				</span>
 	 			</a>
-	 			<a ng-switch-when="1" href="index.php/alum_lis/?m={{dat.casg_prof}}&c={{dat.ccar_prof}}&g={{dat.gdo_prof}}&gr={{dat.gpo_prof}}&id={{dat.id}}&t={{dat.tur_prof}}">
+	 			<a ng-switch-when="1" href="index.php/alum_lis/?m={{dat.casg_prof}}&c={{dat.ccar_prof}}&g={{dat.gdo_prof}}&gr={{dat.gpo_prof}}&id={{dat.id}}">
 	 				<span class="label label-warning">
 	 					<span class="glyphicon glyphicon-list-alt"></span>
 	 					[enpro]
