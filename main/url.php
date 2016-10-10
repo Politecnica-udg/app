@@ -23,7 +23,9 @@
 		"editP"			=> "index.pagHtml.editP",
 		"pwNew"			=> "index.pwNew",
 		"autEM"			=> "admon.pagHtml.autEM",
-		"saveFAM"		=> "admon.saveFAM"
+		"saveFAM"		=> "admon.saveFAM",
+		"autEMV"		=> "admon.autEMV",
+		"autEMM"		=> "admon.pagHtml.autAMM"
 	];
 	patterns($URLpatterns);
 ?>

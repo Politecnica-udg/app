@@ -12,6 +12,9 @@
 								values ('$_SESSION[codigo]','$a[p1]','$a[p2]','$a[p3]','$a[p4]','$a[p5]','$a[p6]','$a[p7]','$a[p8]','$a[p9]','$a[p10]','$a[p11]','$a[p12]','$a[p13]','$a[p14]','$a[p15]','$a[p16]','$a[p17]','$a[p18]','$a[p19]','$a[p20]','$a[p21]','$a[p22]','$a[p23]','$a[p24]','$a[p25]','$a[p26]','$a[p27]','$a[p28]','$a[p29]','$a[p30]','$a[p31]','$a[p32]','$a[p33]','$a[p34]','$a[p35]','$a[p36]','$a[p37]','$a[p38]','$a[p39]','$a[p40]','$a[p41]','$a[p42]','$a[p43]','$a[p44]')");
 			$this->mysql->query("UPDATE profesores SET evaluo ='1' WHERE cod_pro = '$_SESSION[codigo]'");
 		}
+		public function getAutMM($cod){
+			return $this->mysql->query("SELECT codM_autM FROM autM WHERE codM_autM = '$cod';");
+		}
 		function __destruct(){
 			$this->mysql->close();
 		}

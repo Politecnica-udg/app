@@ -41,7 +41,11 @@
 		}
 		public function saveFAM($a){
 			$consu = new autM();
-			return $consu->getSaveFAM($a);;
+			return $consu->getSaveFAM($a);
+		}
+		public function autEMV($cod){
+			$consu = new autM();
+			return $consu->getAutMM($cod);
 		}
 	}
 ?>
