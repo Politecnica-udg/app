@@ -30,6 +30,7 @@
 	"alum_e":"Evalúa a tus maestros",
 	"Gdo":"Grado",
 	"Grupo":"Grupo",
+        "Tno":"Turno",
 	"Asignatura":"Asignatura",
 	"tipo":"Tipo",
 	"text_help_eval":"Selecciona la materia que quieras evaluar, NO podrás seleccionar materias ya evaluadas con anterioridad.",
