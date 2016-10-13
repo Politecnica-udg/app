@@ -32,7 +32,7 @@
 		}
 		public function getGrupo(){
 			global $conf_poli;
-			$query = $this->mysql->query(" SELECT DISTINCT cod_ev,nom_ubi,cal_int_ev,tfal_int_ev, tclas_int_ev  FROM evaluacion INNER JOIN ubicacion ON calu_ubi=cod_ev WHERE ciclo = '$conf_poli[cal_prof]' and car_ev = '$_GET[c]' and gdo_ev = '$_GET[g]' and  gpo_ev = '$_GET[gr]' and asig_ev = '$_GET[m]' ORDER BY nom_ubi ");
+			$query = $this->mysql->query(" SELECT DISTINCT cod_ev,nom_ubi,cal_int_ev,tfal_int_ev, tclas_int_ev  FROM evaluacion INNER JOIN ubicacion ON calu_ubi=cod_ev WHERE ciclo = '$conf_poli[cal_prof]' and car_ev = '$_GET[c]' and gdo_ev = '$_GET[g]' and  gpo_ev = '$_GET[gr]' and asig_ev = '$_GET[m]' and tno_ev='$_GET[t]' ORDER BY nom_ubi ");
 			while ($reg=$query->fetch_array())
       			$data[] = $reg;
       		return $data;
