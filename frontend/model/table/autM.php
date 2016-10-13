@@ -13,7 +13,11 @@
 			$this->mysql->query("UPDATE profesores SET evaluo ='1' WHERE cod_pro = '$_SESSION[codigo]'");
 		}
 		public function getAutMM($cod){
-			return $this->mysql->query("SELECT codM_autM FROM autM WHERE codM_autM = '$cod';");
+			$query = $this->mysql->query("SELECT codM_autM FROM autM WHERE codM_autM = '$cod';");
+			if ($reg=$query->fetch_array())
+      			return true;
+      		else
+      			return false;
 		}
 		function __destruct(){
 			$this->mysql->close();

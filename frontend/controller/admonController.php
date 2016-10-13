@@ -73,8 +73,7 @@
 			return httpResponse("index.php/");
 		}
 		public function autEMV(){
-
-			if(!$this->data->autEMV($_SESSION['codigo'])){
+			if($this->data->autEMV($_SESSION['codigo'])){
 				return httpResponse("index.php/autEMM");
 			}else{
 				return httpResponse("index.php/autEM");
