@@ -73,7 +73,7 @@ app.controller("evaluarAlum",['$scope', '$http', function ($scope, $http) {
 		});
 	}
 	$scope.saveFal = function (id,fal_al) {
-		$http.get("index.php/saveFal?id_al="+id+"&fal="+fal_al+"&cTotal="+$scope.datos.clas)
+		$http.get("index.php/saveFal?id_al="+id+"&fal="+fal_al+"&cTotal="+$scope.datos.clas.tclas_int)
 		.success(function (dato) {
 		})
 		.error(function (err) {

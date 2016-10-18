@@ -23,7 +23,7 @@
 		}
 		public function datAl(){
 			$datos["alumnos"] = $this->data->datosAl();
-			$datos["clas"] = $datos["alumnos"][0]["tclas_int_ev"];
+			$datos["clas"] = $this->data->classTotal();
 			return jsonResponse($datos);
 		}
 		public function saveCal(){

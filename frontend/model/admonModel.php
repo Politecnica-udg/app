@@ -47,5 +47,9 @@
 			$consu = new autM();
 			return $consu->getAutMM($cod);
 		}
+		public function classTotal(){
+			$consu = new asig_prof();
+			return $consu->getClases();
+		}
 	}
 ?>

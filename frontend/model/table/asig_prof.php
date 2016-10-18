@@ -29,6 +29,11 @@
 		}
 		public function getGrabar($op){
 			$this->mysql->query(" UPDATE asig_prof SET cin = '$op' , tclas_int = '$_GET[fal]' WHERE id='$_GET[id]'");
+		}
+		public function getClases(){
+			$query = $this->mysql->query("SELECT distinct tclas_int FROM asig_prof WHERE id='$_GET[id]'");
+			if ($reg=$query->fetch_array())
+  				return $reg;
 		}	
 		function __destruct(){
 			$this->mysql->close();
