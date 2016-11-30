@@ -25,7 +25,14 @@
 		"autEM"			=> "admon.pagHtml.autEM",
 		"saveFAM"		=> "admon.saveFAM",
 		"autEMV"		=> "admon.autEMV",
-		"autEMM"		=> "admon.pagHtml.autAMM"
+		"autEMM"		=> "admon.pagHtml.autAMM",
+		"el_emp"		=> "studen.el_emp",
+		"info_em"		=> "studen.pagHtml.info_em",
+		"saveInfo"		=> "studen.saveInfo",
+		"catalogo"		=> "studen.catalogo",
+		"ele_em"		=> "studen.ele_em",
+		"save_inf"		=> "studen.save_inf",
+		"cita"			=> "studen.cita"
 	];
 	patterns($URLpatterns);
 ?>

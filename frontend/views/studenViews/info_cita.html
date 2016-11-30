@@ -1,0 +1,9 @@
+<?php if ($arr['asignada'] == 0):?>
+	<div class="alert alert-info" role="alert">[help_alem]</div>
+<?php else: ?>
+	<div class="alert alert-info" role="alert">
+		<h4>[Horabuena]</h4><br>
+		[cita_fecha]<?=$arr['fecha']?> [cita_hora]<?= $arr['hora']?><br>
+		[cita_pd]
+	</div>
+<?php endif;?>

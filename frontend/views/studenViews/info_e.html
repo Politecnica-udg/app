@@ -1,0 +1,39 @@
+<?php global $url_array;?>
+<dl class="dl-horizontal">
+  <div><dt>[name]</dt>
+  <dd><?=utf8_encode($arr['name'])?></dd></div><hr>
+
+  <dt>[domi]</dt>
+  <dd><?= utf8_encode($arr['domi'])?></dd><hr>
+
+  <dt>[cp]</dt>
+  <dd><?=$arr['cp']?></dd><hr>
+
+  <dt>[mun]</dt>
+  <dd><?= utf8_encode($arr['mun'])?></dd><hr>
+
+  <div><dt>[email]</dt>
+  <dd><?= utf8_encode($arr['email'])?></dd></div><hr>
+
+  <dt>[tel]</dt>
+  <dd><?=$arr['tel']?></dd><hr>
+
+  <dt>Responsable</dt>
+  <dd><?= utf8_encode($arr['name_en'])?></dd><hr>
+</dl>
+<h4>[title_elem] <small>[title_elemex]</small></h4>
+<ul class="list-group">
+	<?php foreach ($arr['soli'] as $key => $value):?>
+		<li class="list-group-item">
+    		<h4 class="list-group-item-heading">[actividad]</h4>
+    		<p class="list-group-item-text"><?= utf8_encode($value['act'])?></p>
+    		<h5 class="list-group-item-heading">[apo_eco]</h5>
+    		<p class="list-group-item-text">$<?=$value['apoyo']?></p>
+    		<?php if ($_SESSION['elegir']) :?>
+    		  <a href="index.php/save_inf/<?=$value['id']?>" class="btn btn-primary btn-lg" role="button">Solicitar</a>
+        <?php else:?>
+          <a class="btn btn-primary btn-lg disabled" role="button">Solicitar</a>
+    		<?php endif;?>
+    	</li>
+	<?php endforeach;?>
+</ul>

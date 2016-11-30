@@ -45,7 +45,8 @@
     						1 => "lis_maestos",
 							2 => "alum_e",
 							3 => "app_admin",
-							4 => "autEM"];
+							4 => "autEM",
+							5 => "el_emp"];
 				return renderResponse(viewTemplad::pageChosen('adapp.html',$app));
 			}
 		}

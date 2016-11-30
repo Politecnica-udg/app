@@ -1,0 +1,18 @@
+<div class="list-group">
+	<?php foreach ($arr as $key => $value):?>
+		<a href="index.php/ele_em/<?=$value['em']?>" class="list-group-item">
+    		<h4 class="list-group-item-heading"><?= utf8_encode($value['name'])?></h4>
+    		<p class="list-group-item-text">
+    			<address>
+  					<strong>[domi]</strong>
+  					<?= utf8_encode($value['domi'])?>
+				</address>
+
+				<address>
+  					<strong>Vacantes</strong>
+  					<?= $value['count(*)']?>
+				</address>
+    		</p>
+  		</a>
+	<?php endforeach;?>
+</div>
