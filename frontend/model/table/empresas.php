@@ -8,7 +8,7 @@
 			}
 		}
 		public function inf_em($cod){
-			$query = $this->mysql->query("SELECT * FROM empresas WHERE code = '$cod' ");
+			$query = $this->mysql->query("SELECT * FROM empresas WHERE id = '$cod' ");
 			if ($reg=$query->fetch_array())
       			return $reg;
 		}

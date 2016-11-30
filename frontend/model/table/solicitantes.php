@@ -14,7 +14,7 @@
 		}
 		public function catalogo($carr){
 			$query = $this->mysql->query("SELECT em,count(*), name, domi FROM solicitantes
-				INNER JOIN empresas on code = em
+				INNER JOIN empresas on empresas.id = em
 				WHERE carr = '$carr' AND libre = '0'  GROUP BY em");
 			while ($reg=$query->fetch_array())
       			$data[] = $reg;

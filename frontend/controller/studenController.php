@@ -46,7 +46,7 @@
 		}
 		public function el_emp(){
 			$dat = $this->data->inf_Al($_SESSION['codigo']);
-			if ($dat) {
+			if ($dat['datos_c'] != 0) {
 				$d = $this->data->inf_soli($_SESSION['codigo']);
 				if ($d) {
 					return HttpResponse('index.php/cita');
@@ -74,21 +74,31 @@
 			$inf_e['soli'] = $this->data->solici_lista($url_array[2]);
 			$promedio = $this->data->cali_al();
 							$fecha = date("Y/m/d/H/i/s");
-							if ($fecha >= "2016/11/28/00/00/01" && $promedio[0] >= 94.99) {
+							if ($fecha >= "2016/12/5/00/00/01" && $promedio[0] >= 97) {
 								$_SESSION['elegir'] = TRUE;  
-							}elseif ($fecha >= "2016/12/08/12/00/01" && $promedio[0] >= 89.99) {
+							}elseif ($fecha >= "2016/12/5/06/00/01" && $promedio[0] >= 94) {
 								$_SESSION['elegir'] = TRUE;
-							}elseif ($fecha >= "2016/12/09/00/00/01" && $promedio[0] >= 84.99) {
+							}elseif ($fecha >= "2016/12/5/12/00/01" && $promedio[0] >= 91) {
 								$_SESSION['elegir'] = TRUE;
-							}elseif ($fecha >= "2016/12/09/12/00/01" && $promedio[0] >= 79.99) {
+							}elseif ($fecha >= "2016/12/5/18/00/01" && $promedio[0] >= 88) {
 								$_SESSION['elegir'] = TRUE;
-							}elseif ($fecha >= "2016/12/10/00/00/01" && $promedio[0] >= 74.99) {
+							}elseif ($fecha >= "2016/12/6/00/00/01" && $promedio[0] >= 85) {
 								$_SESSION['elegir'] = TRUE;
-							}elseif ($fecha >= "2016/12/10/12/00/01" && $promedio[0] >= 69.99) {
+							}elseif ($fecha >= "2016/12/6/06/00/01" && $promedio[0] >= 82) {
 								$_SESSION['elegir'] = TRUE;
-							}elseif ($fecha >= "2016/12/11/00/00/01" && $promedio[0] >= 64.99) {
+							}elseif ($fecha >= "2016/12/6/12/00/01" && $promedio[0] >= 79) {
 								$_SESSION['elegir'] = TRUE;
-							}elseif ($fecha >= "2016/12/11/12/00/01" && $promedio[0] >= 60.00) {
+							}elseif ($fecha >= "2016/12/6/18/00/01" && $promedio[0] >= 76) {
+								$_SESSION['elegir'] = TRUE;
+							}elseif ($fecha >= "2016/12/7/00/00/01" && $promedio[0] >= 73) {
+								$_SESSION['elegir'] = TRUE;
+							}elseif ($fecha >= "2016/12/7/06/00/01" && $promedio[0] >= 70) {
+								$_SESSION['elegir'] = TRUE;
+							}elseif ($fecha >= "2016/12/7/12/00/01" && $promedio[0] >= 67) {
+								$_SESSION['elegir'] = TRUE;
+							}elseif ($fecha >= "2016/12/7/18/00/01" && $promedio[0] >= 64) {
+								$_SESSION['elegir'] = TRUE;
+							}elseif ($fecha >= "2016/12/8/00/00/01" && $promedio[0] >= 60) {
 								$_SESSION['elegir'] = TRUE;
 							}else{
 								$_SESSION['elegir'] = FALSE;
