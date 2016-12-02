@@ -2,6 +2,7 @@
 	require_once 'frontend/model/table/asig_prof.php';
 	require_once 'frontend/model/table/evaluacion.php';
 	require_once 'frontend/model/table/autM.php';
+	require_once 'frontend/model/table/empresas.php';
 	class model_admon{
 		public function datosMaestros(){
 			$consu = new asig_prof();
@@ -50,6 +51,10 @@
 		public function classTotal(){
 			$consu = new asig_prof();
 			return $consu->getClases();
+		}
+		public function empInfo(){
+			$consu = new empresas();
+			return $consu->empInfo();
 		}
 	}
 ?>
