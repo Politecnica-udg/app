@@ -141,17 +141,88 @@ app.controller("em",['$scope', '$http', function ($scope, $http) {
 		$http.post("index.php/empInfo")
 		.success(function (dat) {
 			$scope.empresas = dat;
-			console.log(dat);
 		})
 		.error(function (err) {
 			console.log(err);
 		});		
 	}
 	$scope.editEm = function (id) {
-		$scope.name = $scope.empresas[id].name;
+		$scope.id 		= $scope.empresas[id].id;
+		$scope.name 	= $scope.empresas[id].name;
+		$scope.domi 	= $scope.empresas[id].domi;
+		$scope.cp		= $scope.empresas[id].cp;
+		$scope.mun		= $scope.empresas[id].mun;
+		$scope.email	= $scope.empresas[id].email;
+		$scope.tel		= $scope.empresas[id].tel;
+		$scope.name_en	= $scope.empresas[id].name_en;
+		$scope.cargo	= $scope.empresas[id].cargo;
+		$scope.email_en	= $scope.empresas[id].email_en;
+	}
+	$scope.editEmSave = function (id) {
+		$http.post("index.php/eSaveEm",{
+			id_em 	: id,
+			name 	: $scope.name,
+			domi 	: $scope.domi,
+			cp		: $scope.cp,
+			mun 	: $scope.mun,
+			email 	: $scope.email,
+			tel 	: $scope.tel,
+			name_en : $scope.name_en,
+			cargo	: $scope.cargo,
+			email_en: $scope.email_en
+		})
+		.success(function (dat) {
+			$scope.empInfo();
+		})
+		.error(function (err) {
+			console.log(err);
+		});
 	}
 }]);
-
+app.controller("soliEm",['$scope', '$http', function ($scope, $http) {
+	$scope.solicitantes = [];
+	$scope.soliIn = function (id) {
+		$http.post("index.php/soliIn/"+id)
+		.success(function (dat) {
+			$scope.solicitantes = dat;
+		})
+		.error(function (err) {
+			console.log(err);
+		});		
+	}
+	$scope.soliEdit = function (id) {
+		$scope.id_soli	= $scope.solicitantes[id].id_soli;
+		$scope.carr		= $scope.solicitantes[id].carr;
+		$scope.act 		= $scope.solicitantes[id].act;
+		$scope.apoyo	= $scope.solicitantes[id].apoyo;
+		$scope.sexo_em 	= $scope.solicitantes[id].sexo_em;
+	}
+	$scope.eSaveSo = function (id, em) {
+		$http.post("index.php/eSaveSo",{
+			id_soli	: id,
+			carr	: $scope.carr,
+			act 	: $scope.act,
+			apoyo	: $scope.apoyo,
+			sexo_em	: $scope.sexo_em
+		})
+		.success(function (dat) {
+			$scope.soliIn(em);
+		})
+		.error(function (err) {
+			console.log(err);
+		});
+	}
+	$scope.quitAl = function (cod) {
+		$http.post("index.php/quitAl/"+cod)
+		.success(function (dat) {
+			console.log(dat);
+		})
+		.error(function (err) {
+			console.log(err);
+		});
+				
+	}
+}]);
 
 
 /**----------------------------------------------------------------------------------------

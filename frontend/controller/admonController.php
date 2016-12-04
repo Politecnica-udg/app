@@ -82,5 +82,21 @@
 		public function empInfo(){
 			return jsonResponse($this->data->empInfo());
 		}
+		public function eSaveEm(){
+			$dat = jsonPOST();
+			return jsonResponse($this->data->eSaveEm($dat));
+		}
+		public function soliIn(){
+			global $url_array;
+			return jsonResponse($this->data->soliIn($url_array[2]));
+		}
+		public function eSaveSo(){
+			$dat = jsonPOST();
+			return jsonResponse($this->data->eSaveSo($dat));
+		}
+		public function quitAl(){
+			global $url_array;
+			return jsonResponse($this->data->quitAl($url_array[2]));
+		}
 	}
 ?>

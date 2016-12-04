@@ -3,6 +3,7 @@
 	require_once 'frontend/model/table/evaluacion.php';
 	require_once 'frontend/model/table/autM.php';
 	require_once 'frontend/model/table/empresas.php';
+	require_once 'frontend/model/table/solicitantes.php';
 	class model_admon{
 		public function datosMaestros(){
 			$consu = new asig_prof();
@@ -55,6 +56,22 @@
 		public function empInfo(){
 			$consu = new empresas();
 			return $consu->empInfo();
+		}
+		public function eSaveEm($dat){
+			$consu = new empresas();
+			return $consu->eSaveEm($dat);
+		}
+		public function soliIn($id){
+			$consu = new solicitantes();
+			return $consu->soliIn($id);
+		}
+		public function eSaveSo($dat){
+			$consu = new solicitantes();
+			return $consu->eSaveSo($dat);
+		}
+		public function quitAl($cod){
+			$consu = new solicitantes();
+			return $consu->quitAl($cod);
 		}
 	}
 ?>

@@ -20,6 +20,19 @@
       			$data[] = $reg;
       		return $data;
 		}
+		public function eSaveEm($dat){
+			return $this->mysql->query("UPDATE empresas SET
+										name 	= '$dat[name]',
+										domi 	= '$dat[domi]',
+										cp 		= '$dat[cp]',
+										mun 	= '$dat[mun]',
+										email 	= '$dat[email]',
+										tel 	= '$dat[tel]',
+										name_en = '$dat[name_en]',
+										cargo 	= '$dat[cargo]',
+										email_en= '$dat[email_en]'
+									WHERE id = '$dat[id_em]'; ");
+		}
 		function __destruct(){
 			$this->mysql->close();
 		}
