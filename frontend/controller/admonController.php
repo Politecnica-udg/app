@@ -88,7 +88,21 @@
 		}
 		public function soliIn(){
 			global $url_array;
-			return jsonResponse($this->data->soliIn($url_array[2]));
+			$dat = $this->data->soliIn($url_array[2]);
+			foreach ($dat as $key => $value) {
+				switch ($value['sexo_em']) {
+					case '0':
+						$dat[$key]['sexo_na'] = "Indefinido";
+					break;
+					case '1':
+						$dat[$key]['sexo_na'] = "Hombre";
+						break;
+					case '2':
+						$dat[$key]['sexo_na'] = "Mujer";
+						break;
+				}
+			}
+			return jsonResponse($dat);
 		}
 		public function eSaveSo(){
 			$dat = jsonPOST();
