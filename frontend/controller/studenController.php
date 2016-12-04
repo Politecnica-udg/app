@@ -70,41 +70,44 @@
 		}
 		public function ele_em(){
 			global $url_array;
-			$inf_e = $this->data->inf_em($url_array[2]);
-			$inf_e['soli'] = $this->data->solici_lista($url_array[2]);
-			$promedio = $this->data->cali_al();
-
-							$fecha = date("Y/m/d/H/i/s");
-							echo $fecha;
-							if ($fecha >= "2016/12/05/08/00/01" && $promedio[0] >= 97) {
-								$_SESSION['elegir'] = TRUE;  
-							}elseif ($fecha >= "2016/12/05/09/00/01" && $promedio[0] >= 94) {
-								$_SESSION['elegir'] = TRUE;
-							}elseif ($fecha >= "2016/12/05/10/00/01" && $promedio[0] >= 91) {
-								$_SESSION['elegir'] = TRUE;
-							}elseif ($fecha >= "2016/12/05/11/00/01" && $promedio[0] >= 88) {
-								$_SESSION['elegir'] = TRUE;
-							}elseif ($fecha >= "2016/12/05/12/00/01" && $promedio[0] >= 85) {
-								$_SESSION['elegir'] = TRUE;
-							}elseif ($fecha >= "2016/12/05/13/00/01" && $promedio[0] >= 82) {
-								$_SESSION['elegir'] = TRUE;
-							}elseif ($fecha >= "2016/12/05/14/00/01" && $promedio[0] >= 79) {
-								$_SESSION['elegir'] = TRUE;
-							}elseif ($fecha >= "2016/12/05/15/00/01" && $promedio[0] >= 76) {
-								$_SESSION['elegir'] = TRUE;
-							}elseif ($fecha >= "2016/12/05/16/00/01" && $promedio[0] >= 73) {
-								$_SESSION['elegir'] = TRUE;
-							}elseif ($fecha >= "2016/12/05/17/00/01" && $promedio[0] >= 70) {
-								$_SESSION['elegir'] = TRUE;
-							}elseif ($fecha >= "2016/12/05/18/00/01" && $promedio[0] >= 67) {
-								$_SESSION['elegir'] = TRUE;
-							}elseif ($fecha >= "2016/12/05/19/00/01" && $promedio[0] >= 64) {
-								$_SESSION['elegir'] = TRUE;
-							}elseif ($fecha >= "2016/12/05/20/00/01" && $promedio[0] >= 60) {
-								$_SESSION['elegir'] = TRUE;
-							}else{
-								$_SESSION['elegir'] = FALSE;
-							}
+			$inf_e 		= $this->data->inf_em($url_array[2]);
+			$promedio 	= $this->data->cali_al();
+			$sex		= $this->data->sexo();
+			if ($sex['sexo'] == 'mujer') {
+				$inf_e['soli'] = $this->data->solici_lista($url_array[2],1);
+			}else{
+				$inf_e['soli'] = $this->data->solici_lista($url_array[2],2);
+			}
+					$fecha = date("Y/m/d/H/i/s");
+					if ($fecha >= "2016/12/01/08/00/01" && $promedio[0] >= 97) {
+						$_SESSION['elegir'] = TRUE;  
+					}elseif ($fecha >= "2016/12/05/09/00/01" && $promedio[0] >= 94) {
+						$_SESSION['elegir'] = TRUE;
+					}elseif ($fecha >= "2016/12/05/10/00/01" && $promedio[0] >= 91) {
+						$_SESSION['elegir'] = TRUE;
+					}elseif ($fecha >= "2016/12/05/11/00/01" && $promedio[0] >= 88) {
+						$_SESSION['elegir'] = TRUE;
+					}elseif ($fecha >= "2016/12/05/12/00/01" && $promedio[0] >= 85) {
+						$_SESSION['elegir'] = TRUE;
+					}elseif ($fecha >= "2016/12/05/13/00/01" && $promedio[0] >= 82) {
+						$_SESSION['elegir'] = TRUE;
+					}elseif ($fecha >= "2016/12/05/14/00/01" && $promedio[0] >= 79) {
+						$_SESSION['elegir'] = TRUE;
+					}elseif ($fecha >= "2016/12/05/15/00/01" && $promedio[0] >= 76) {
+						$_SESSION['elegir'] = TRUE;
+					}elseif ($fecha >= "2016/12/05/16/00/01" && $promedio[0] >= 73) {
+						$_SESSION['elegir'] = TRUE;
+					}elseif ($fecha >= "2016/12/05/17/00/01" && $promedio[0] >= 70) {
+						$_SESSION['elegir'] = TRUE;
+					}elseif ($fecha >= "2016/12/05/18/00/01" && $promedio[0] >= 67) {
+						$_SESSION['elegir'] = TRUE;
+					}elseif ($fecha >= "2016/12/05/19/00/01" && $promedio[0] >= 64) {
+						$_SESSION['elegir'] = TRUE;
+					}elseif ($fecha >= "2016/12/05/20/00/01" && $promedio[0] >= 60) {
+						$_SESSION['elegir'] = TRUE;
+					}else{
+						$_SESSION['elegir'] = FALSE;
+					}
 			return renderResponse(viewTemplad::studen('info_e.html',$inf_e));
 		}
 		public function save_inf(){

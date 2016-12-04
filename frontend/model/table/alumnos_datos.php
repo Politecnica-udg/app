@@ -48,6 +48,11 @@
 							WHERE codigo_a = '$_SESSION[codigo]';");
 			return true;
 		}
+		public function sexo(){
+			$query = $this->mysql->query("SELECT sexo FROM alumnos_datos WHERE codigo_a = '$_SESSION[codigo]' ");
+			if ($reg=$query->fetch_array())
+      			return $reg;
+		}
 		function __destruct(){
 			$this->mysql->close();
 		}
