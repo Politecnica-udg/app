@@ -56,5 +56,9 @@
 			$consu = new empresas();
 			return $consu->empInfo();
 		}
+		public function eSaveEm($dat){
+			$consu = new empresas();
+			return $consu->eSaveEm($dat);
+		}
 	}
 ?>

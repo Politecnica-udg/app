@@ -82,5 +82,9 @@
 		public function empInfo(){
 			return jsonResponse($this->data->empInfo());
 		}
+		public function eSaveEm(){
+			$dat = jsonPOST();
+			return jsonResponse($this->data->eSaveEm($dat));
+		}
 	}
 ?>

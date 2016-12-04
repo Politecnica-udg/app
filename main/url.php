@@ -34,7 +34,8 @@
 		"save_inf"		=> "studen.save_inf",
 		"cita"			=> "studen.cita",
 		"em"			=> "admon.pagHtml.em",
-		"empInfo"		=> "admon.empInfo"
+		"empInfo"		=> "admon.empInfo",
+		"eSaveEm"		=> "admon.eSaveEm"
 	];
 	patterns($URLpatterns);
 ?>
