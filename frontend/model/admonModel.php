@@ -73,5 +73,10 @@
 			$consu = new solicitantes();
 			return $consu->quitAl($cod);
 		}
+		public function deleteEm($id){
+			$consu = new empresas();
+			return $consu->deleteEm($id);
+
+		}
 	}
 ?>

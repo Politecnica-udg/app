@@ -39,7 +39,8 @@
 		"soliEm"		=> "admon.pagHtml.soliEm",
 		"soliIn"		=> "admon.soliIn",
 		"eSaveSo"		=> "admon.eSaveSo",
-		"quitAl"		=> "admon.quitAl"
+		"quitAl"		=> "admon.quitAl",
+		"deleteEm"		=> "admon.deleteEm"
 	];
 	patterns($URLpatterns);
 ?>

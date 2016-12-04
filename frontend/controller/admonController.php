@@ -112,5 +112,9 @@
 			global $url_array;
 			return jsonResponse($this->data->quitAl($url_array[2]));
 		}
+		public function deleteEm(){
+			global $url_array;
+			return jsonResponse($this->data->deleteEm($url_array[2]));
+		}
 	}
 ?>

@@ -33,6 +33,10 @@
 										email_en= '$dat[email_en]'
 									WHERE id = '$dat[id_em]'; ");
 		}
+		public function deleteEm($id){
+			$this->mysql->query("DELETE FROM empresas WHERE id = '$id';");
+			return $this->mysql->query("DELETE FROM solicitantes WHERE em = '$id';");
+		}
 		function __destruct(){
 			$this->mysql->close();
 		}

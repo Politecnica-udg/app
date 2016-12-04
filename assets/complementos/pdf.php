@@ -48,4 +48,12 @@
 			$this->Ln();
    		}
 	}
+	class vinculacion extends FPDF {
+		function __construct(){
+			parent::__construct();
+		}
+		public function Header(){
+			# code...
+		}
+	}
 ?>

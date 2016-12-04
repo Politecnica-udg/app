@@ -70,6 +70,7 @@
 		}
 		public function ele_em(){
 			global $url_array;
+			global $conf_poli;
 			$inf_e 		= $this->data->inf_em($url_array[2]);
 			$promedio 	= $this->data->cali_al();
 			$sex		= $this->data->sexo();
@@ -79,31 +80,31 @@
 				$inf_e['soli'] = $this->data->solici_lista($url_array[2],2);
 			}
 					$fecha = date("Y/m/d/H/i/s");
-					if ($fecha >= "2016/12/05/08/00/01" && $promedio[0] >= 97) {
+					if ($fecha >= $conf_poli['elecion']."/08/00/01" && $promedio[0] >= 98) {
 						$_SESSION['elegir'] = TRUE;  
-					}elseif ($fecha >= "2016/12/05/09/00/01" && $promedio[0] >= 94) {
+					}elseif ($fecha >= $conf_poli['elecion']."/09/00/01" && $promedio[0] >= 95) {
 						$_SESSION['elegir'] = TRUE;
-					}elseif ($fecha >= "2016/12/05/10/00/01" && $promedio[0] >= 91) {
+					}elseif ($fecha >= $conf_poli['elecion']."/10/00/01" && $promedio[0] >= 92) {
 						$_SESSION['elegir'] = TRUE;
-					}elseif ($fecha >= "2016/12/05/11/00/01" && $promedio[0] >= 88) {
+					}elseif ($fecha >= $conf_poli['elecion']."/11/00/01" && $promedio[0] >= 89) {
 						$_SESSION['elegir'] = TRUE;
-					}elseif ($fecha >= "2016/12/05/12/00/01" && $promedio[0] >= 85) {
+					}elseif ($fecha >= $conf_poli['elecion']."/12/00/01" && $promedio[0] >= 86) {
 						$_SESSION['elegir'] = TRUE;
-					}elseif ($fecha >= "2016/12/05/13/00/01" && $promedio[0] >= 82) {
+					}elseif ($fecha >= $conf_poli['elecion']."/13/00/01" && $promedio[0] >= 83) {
 						$_SESSION['elegir'] = TRUE;
-					}elseif ($fecha >= "2016/12/05/14/00/01" && $promedio[0] >= 79) {
+					}elseif ($fecha >= $conf_poli['elecion']."/14/00/01" && $promedio[0] >= 80) {
 						$_SESSION['elegir'] = TRUE;
-					}elseif ($fecha >= "2016/12/05/15/00/01" && $promedio[0] >= 76) {
+					}elseif ($fecha >= $conf_poli['elecion']."/15/00/01" && $promedio[0] >= 77) {
 						$_SESSION['elegir'] = TRUE;
-					}elseif ($fecha >= "2016/12/05/16/00/01" && $promedio[0] >= 73) {
+					}elseif ($fecha >= $conf_poli['elecion']."/16/00/01" && $promedio[0] >= 74) {
 						$_SESSION['elegir'] = TRUE;
-					}elseif ($fecha >= "2016/12/05/17/00/01" && $promedio[0] >= 70) {
+					}elseif ($fecha >= $conf_poli['elecion']."/17/00/01" && $promedio[0] >= 71) {
 						$_SESSION['elegir'] = TRUE;
-					}elseif ($fecha >= "2016/12/05/18/00/01" && $promedio[0] >= 67) {
+					}elseif ($fecha >= $conf_poli['elecion']."/18/00/01" && $promedio[0] >= 68) {
 						$_SESSION['elegir'] = TRUE;
-					}elseif ($fecha >= "2016/12/05/19/00/01" && $promedio[0] >= 64) {
+					}elseif ($fecha >= $conf_poli['elecion']."/19/00/01" && $promedio[0] >= 65) {
 						$_SESSION['elegir'] = TRUE;
-					}elseif ($fecha >= "2016/12/05/20/00/01" && $promedio[0] >= 60) {
+					}elseif ($fecha >= $conf_poli['elecion']."/20/00/01" && $promedio[0] >= 60) {
 						$_SESSION['elegir'] = TRUE;
 					}else{
 						$_SESSION['elegir'] = FALSE;
