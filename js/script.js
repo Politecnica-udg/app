@@ -212,10 +212,10 @@ app.controller("soliEm",['$scope', '$http', function ($scope, $http) {
 			console.log(err);
 		});
 	}
-	$scope.quitAl = function (cod) {
+	$scope.quitAl = function (cod , em) {
 		$http.post("index.php/quitAl/"+cod)
 		.success(function (dat) {
-			console.log(dat);
+			$scope.soliIn(em);
 		})
 		.error(function (err) {
 			console.log(err);
