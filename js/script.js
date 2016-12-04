@@ -179,7 +179,50 @@ app.controller("em",['$scope', '$http', function ($scope, $http) {
 		});
 	}
 }]);
-
+app.controller("soliEm",['$scope', '$http', function ($scope, $http) {
+	$scope.solicitantes = [];
+	$scope.soliIn = function (id) {
+		$http.post("index.php/soliIn/"+id)
+		.success(function (dat) {
+			$scope.solicitantes = dat;
+		})
+		.error(function (err) {
+			console.log(err);
+		});		
+	}
+	$scope.soliEdit = function (id) {
+		$scope.id_soli	= $scope.solicitantes[id].id_soli;
+		$scope.carr		= $scope.solicitantes[id].carr;
+		$scope.act 		= $scope.solicitantes[id].act;
+		$scope.apoyo	= $scope.solicitantes[id].apoyo;
+		$scope.sexo_em 	= $scope.solicitantes[id].sexo_em;
+	}
+	$scope.eSaveSo = function (id, em) {
+		$http.post("index.php/eSaveSo",{
+			id_soli	: id,
+			carr	: $scope.carr,
+			act 	: $scope.act,
+			apoyo	: $scope.apoyo,
+			sexo_em	: $scope.sexo_em
+		})
+		.success(function (dat) {
+			$scope.soliIn(em);
+		})
+		.error(function (err) {
+			console.log(err);
+		});
+	}
+	$scope.quitAl = function (cod) {
+		$http.post("index.php/quitAl/"+cod)
+		.success(function (dat) {
+			console.log(dat);
+		})
+		.error(function (err) {
+			console.log(err);
+		});
+				
+	}
+}]);
 
 
 /**----------------------------------------------------------------------------------------

@@ -35,7 +35,11 @@
 		"cita"			=> "studen.cita",
 		"em"			=> "admon.pagHtml.em",
 		"empInfo"		=> "admon.empInfo",
-		"eSaveEm"		=> "admon.eSaveEm"
+		"eSaveEm"		=> "admon.eSaveEm",
+		"soliEm"		=> "admon.pagHtml.soliEm",
+		"soliIn"		=> "admon.soliIn",
+		"eSaveSo"		=> "admon.eSaveSo",
+		"quitAl"		=> "admon.quitAl"
 	];
 	patterns($URLpatterns);
 ?>
