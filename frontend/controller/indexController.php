@@ -46,7 +46,8 @@
 							2 => "alum_e",
 							3 => "app_admin",
 							4 => "autEM",
-							5 => "el_emp"];
+							5 => "el_emp",
+							6 => "em"];
 				return renderResponse(viewTemplad::pageChosen('adapp.html',$app));
 			}
 		}

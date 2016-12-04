@@ -1,3 +1,6 @@
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').focus()
+});
 var a = false;
 var app = angular.module("pagPoli",[]);
 app.controller("log",['$scope','$http',function ($scope,$http) {
@@ -106,7 +109,6 @@ app.controller("evaluarAlum",['$scope', '$http', function ($scope, $http) {
 	}
 }]);
 
-
 app.controller("pwNew",['$scope', '$http', function ($scope, $http) {
 	$scope.confirmar = function () {
 		if ($scope.pw1 == $scope.pw2) {
@@ -133,6 +135,25 @@ app.controller("pwNew",['$scope', '$http', function ($scope, $http) {
 		};
 	}
 }]);
+app.controller("em",['$scope', '$http', function ($scope, $http) {
+	$scope.empresas = [];
+	$scope.empInfo = function () {
+		$http.post("index.php/empInfo")
+		.success(function (dat) {
+			$scope.empresas = dat;
+			console.log(dat);
+		})
+		.error(function (err) {
+			console.log(err);
+		});		
+	}
+	$scope.editEm = function (id) {
+		$scope.name = $scope.empresas[id].name;
+	}
+}]);
+
+
+
 /**----------------------------------------------------------------------------------------
 ----------------------------- Codigo de Google analytics. -----------------------
 ----------------------------------------------------------------------------------------  

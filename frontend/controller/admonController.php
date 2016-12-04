@@ -79,5 +79,8 @@
 				return httpResponse("index.php/autEM");
 			}
 		}
+		public function empInfo(){
+			return jsonResponse($this->data->empInfo());
+		}
 	}
 ?>

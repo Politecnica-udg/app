@@ -32,7 +32,9 @@
 		"catalogo"		=> "studen.catalogo",
 		"ele_em"		=> "studen.ele_em",
 		"save_inf"		=> "studen.save_inf",
-		"cita"			=> "studen.cita"
+		"cita"			=> "studen.cita",
+		"em"			=> "admon.pagHtml.em",
+		"empInfo"		=> "admon.empInfo"
 	];
 	patterns($URLpatterns);
 ?>
