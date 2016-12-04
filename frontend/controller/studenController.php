@@ -79,7 +79,7 @@
 				$inf_e['soli'] = $this->data->solici_lista($url_array[2],2);
 			}
 					$fecha = date("Y/m/d/H/i/s");
-					if ($fecha >= "2016/12/01/08/00/01" && $promedio[0] >= 97) {
+					if ($fecha >= "2016/12/05/08/00/01" && $promedio[0] >= 97) {
 						$_SESSION['elegir'] = TRUE;  
 					}elseif ($fecha >= "2016/12/05/09/00/01" && $promedio[0] >= 94) {
 						$_SESSION['elegir'] = TRUE;
