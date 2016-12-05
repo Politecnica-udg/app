@@ -141,7 +141,7 @@
 			$pdf->Ln();
 			$pdf->MultiCell(160,4, utf8_decode("Cabe señalar que el periodo vacacional de primavera para los alumnos, comprende los días nueve de abril al 23 de abril de 2017."),0,'J');
 			$pdf->Ln();
-			$pdf->MultiCell(160,4, utf8_decode("El C.".$_SESSION['nombre'].", es el estudiante asignado a su empresa para la realización de las  Prácticas Profesionales, las cuales inician el 23 de febrero al 17 de mayo de 2017 con una carga de 200hrs totales, asistiendo de lunes a viernes cuatro horas diarias; la asignación de horario será determinado por la empresa en acuerdo con el alumno."),0,'J');
+			$pdf->MultiCell(160,4, utf8_decode("El C.".$_SESSION['nombre'].", es el estudiante asignado a su empresa para la realización de las  Prácticas Profesionales, las cuales inician el 23 de febrero al ".$dat['dia_fin']." de mayo de 2017 con una carga de ".$dat['horas']."hrs totales, asistiendo de lunes a viernes cuatro horas diarias; la asignación de horario será determinado por la empresa en acuerdo con el alumno."),0,'J');
 			$pdf->Ln();
 			$pdf->SetFillColor(192, 192, 192);
 			$pdf->Cell(160,5,utf8_decode("DATOS ESCOLARES"),1,2,'C',true);
