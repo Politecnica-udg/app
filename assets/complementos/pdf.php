@@ -53,7 +53,13 @@
 			parent::__construct();
 		}
 		public function Header(){
-			# code...
+			$this->Image('assets/complementos/img/cabecera.jpg', 1, 1, 215, 35,'JPG');
+			$this->SetFont('Arial','I',12);
+			$this->Cell(27,10,"",0,2);
+			$this->Cell(27,5,"",0);
+			$this->Cell(50,5,'ESCUELA POLIT'.utf8_decode("É").'CNICA',0,2);
+			$this->Cell(55,5,"COORDINACION DE CARRERA",0,2);
+			$this->Cell(55,5,"VINCULACION",0,2);
 		}
 	}
 ?>

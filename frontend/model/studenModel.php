@@ -63,5 +63,9 @@
 			$consu = new citas();
 			return $consu->cita($cod);
 		}
+		public function infoRepo($cod){
+			$consu = new empresas();
+			return $consu->infoRepo($cod);
+		}
 	}
 ?>
