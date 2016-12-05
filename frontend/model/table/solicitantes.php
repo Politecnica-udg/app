@@ -20,9 +20,9 @@
       			$data[] = $reg;
       		return $data;
 		}
-		public function solici_lista($cod){
+		public function solici_lista($cod, $sexo){
 			$query = $this->mysql->query("SELECT distinct * FROM solicitantes
-				WHERE carr = '$_SESSION[carr]' AND libre = '0' AND em = '$cod'");
+				WHERE carr = '$_SESSION[carr]' AND libre = '0' AND em = '$cod' AND sexo_em != '$sexo'");
 			while ($reg=$query->fetch_array())
       			$data[] = $reg;
       		return $data;

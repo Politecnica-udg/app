@@ -33,6 +33,21 @@
 										email_en= '$dat[email_en]'
 									WHERE id = '$dat[id_em]'; ");
 		}
+		public function deleteEm($id){
+			$this->mysql->query("DELETE FROM empresas WHERE id = '$id';");
+			return $this->mysql->query("DELETE FROM solicitantes WHERE em = '$id';");
+		}
+		public function infoRepo($cod){
+			$q = "SELECT *, empresas.name AS name_e FROM solicitantes
+						INNER JOIN empresas 		ON solicitantes.em 		= empresas.id 
+						INNER JOIN alumnos_datos 	ON solicitantes.codigo 	= alumnos_datos.codigo_a
+						INNER JOIN carreras 		ON solicitantes.carr 	= carreras.abr_car
+						INNER JOIN ubicacion		ON alumnos_datos.codigo_a = ubicacion.calu_ubi
+ 						WHERE codigo = '$cod';";
+			$query = $this->mysql->query($q);
+			if ($reg=$query->fetch_array())
+      			return $reg;
+		}
 		function __destruct(){
 			$this->mysql->close();
 		}

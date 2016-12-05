@@ -178,6 +178,16 @@ app.controller("em",['$scope', '$http', function ($scope, $http) {
 			console.log(err);
 		});
 	}
+	$scope.deleteEm = function (id) {
+		$http.post("index.php/deleteEm/"+$scope.empresas[id].id)
+		.success(function (dat) {
+			$scope.empInfo();
+		})
+		.error(function (err) {
+			console.log(err);
+		});
+				
+	}
 }]);
 app.controller("soliEm",['$scope', '$http', function ($scope, $http) {
 	$scope.solicitantes = [];

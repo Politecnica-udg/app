@@ -1,9 +1,6 @@
-<?php if ($arr['asignada'] == 0):?>
-	<div class="alert alert-info" role="alert">[help_alem]</div>
-<?php else: ?>
-	<div class="alert alert-info" role="alert">
-		<h4>[Horabuena]</h4><br>
-		[cita_fecha]<?=$arr['fecha']?> [cita_hora]<?= $arr['hora']?><br>
-		[cita_pd]
-	</div>
-<?php endif;?>
+<div class="alert alert-info" role="alert">
+	Pasar a Coordinación de Carrera a entregar formato generado para firmarlo
+</div>
+<a href="index.php/vinculacion/<?=$_SESSION['codigo']?>" type="button" class="btn btn-default btn-lg">
+  <span class="glyphicon glyphicon-print" aria-hidden="true"></span> Imprimir
+</a>

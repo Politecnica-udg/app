@@ -43,13 +43,17 @@
 			$consu = new empresas();
 			return $consu->inf_em($em);
 		}
-		public function solici_lista($em){
+		public function solici_lista($em, $sexo){
 			$consu = new solicitantes();
-			return $consu->solici_lista($em);
+			return $consu->solici_lista($em, $sexo);
 		}
 		public function cali_al(){
 			$consu = new cali();
 			return $consu->cali_al();
+		}
+		public function sexo(){
+			$consu = new alumnos_datos();
+			return $consu->sexo();
 		}
 		public function save_inf($id){
 			$consu = new solicitantes();
@@ -58,6 +62,10 @@
 		public function cita($cod){
 			$consu = new citas();
 			return $consu->cita($cod);
+		}
+		public function infoRepo($cod){
+			$consu = new empresas();
+			return $consu->infoRepo($cod);
 		}
 	}
 ?>
