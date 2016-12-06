@@ -52,6 +52,10 @@
 			$this->mysql->query("UPDATE solicitantes SET libre = '0', codigo='0' WHERE codigo = '$cod';");
 			$this->mysql->query("UPDATE alumnos_datos SET em_codigo = '0' WHERE codigo_a = '$cod';");
 		}
+		public function SaveSo($dat){
+			return $this->mysql->query("INSERT INTO solicitantes (carr, act, apoyo, sexo_em, em)
+										VALUES ('$dat[carr]', '$dat[act]', '$dat[apoyo]', '$dat[sexo_em]', '$dat[emp]')");
+		}
 		function __destruct(){
 			$this->mysql->close();
 		}

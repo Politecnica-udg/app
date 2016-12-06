@@ -1,6 +1,9 @@
 $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').focus()
 });
+$('#myModal2').on('shown.bs.modal', function () {
+  $('#myInput').focus()
+});
 var a = false;
 var app = angular.module("pagPoli",[]);
 app.controller("log",['$scope','$http',function ($scope,$http) {
@@ -185,6 +188,37 @@ app.controller("em",['$scope', '$http', function ($scope, $http) {
 		})
 		.error(function (err) {
 			console.log(err);
+		});	
+	}
+	$scope.newEmpresa = function () {
+		$scope.name 	= "";
+		$scope.domi 	= "";
+		$scope.cp		= "";
+		$scope.mun		= "";
+		$scope.email	= "";
+		$scope.tel		= "";
+		$scope.name_en	= "";
+		$scope.cargo	= "";
+		$scope.email_en	= "";
+	}
+	$scope.EmSave = function () {
+		$http.post("index.php/EmSave",{
+			name 	: $scope.name,
+			domi 	: $scope.domi,
+			cp		: $scope.cp,
+			mun 	: $scope.mun,
+			email 	: $scope.email,
+			tel 	: $scope.tel,
+			name_en : $scope.name_en,
+			cargo	: $scope.cargo,
+			email_en: $scope.email_en
+		})
+		.success(function (dat) {
+			console.log(dat);
+			$scope.empInfo();
+		})
+		.error(function (err) {
+			console.log(err);
 		});
 				
 	}
@@ -226,6 +260,29 @@ app.controller("soliEm",['$scope', '$http', function ($scope, $http) {
 		$http.post("index.php/quitAl/"+cod)
 		.success(function (dat) {
 			$scope.soliIn(em);
+		})
+		.error(function (err) {
+			console.log(err);
+		});			
+	}
+	$scope.newPlaza = function () {
+		$scope.id_soli	= "";
+		$scope.carr		= "";
+		$scope.act 		= "";
+		$scope.apoyo	= "";
+		$scope.sexo_em 	= "";
+	}
+	$scope.SaveSo = function (em) {
+		$http.post("index.php/SaveSo",{
+			carr	: $scope.carr,
+			act 	: $scope.act,
+			apoyo	: $scope.apoyo,
+			sexo_em	: $scope.sexo_em,
+			emp 	: em
+		})
+		.success(function (dat) {
+			$scope.soliIn(em);
+			console.log(dat);
 		})
 		.error(function (err) {
 			console.log(err);

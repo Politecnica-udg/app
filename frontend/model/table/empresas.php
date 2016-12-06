@@ -48,6 +48,11 @@
 			if ($reg=$query->fetch_array())
       			return $reg;
 		}
+		public function EmSave($dat){
+			$this->mysql->query("INSERT INTO empresas (name, domi, cp, mun, email, tel, name_en, cargo, email_en)
+												VALUES ('$dat[name]', '$dat[domi]', '$dat[cp]', '$dat[mun]', '$dat[email]',
+													'$dat[tel]', '$dat[name_en]', '$dat[cargo]', '$dat[email_en]')");
+		}
 		function __destruct(){
 			$this->mysql->close();
 		}

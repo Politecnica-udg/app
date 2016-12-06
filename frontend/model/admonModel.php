@@ -76,7 +76,14 @@
 		public function deleteEm($id){
 			$consu = new empresas();
 			return $consu->deleteEm($id);
-
+		}
+		public function EmSave($dat){
+			$consu = new empresas();
+			return $consu->EmSave($dat);
+		}
+		public function SaveSo($dat){
+			$consu = new solicitantes();
+			return $consu->SaveSo($dat);
 		}
 	}
 ?>
