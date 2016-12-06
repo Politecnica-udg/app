@@ -1,6 +1,9 @@
 $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').focus()
 });
+$('#myModal2').on('shown.bs.modal', function () {
+  $('#myInput').focus()
+});
 var a = false;
 var app = angular.module("pagPoli",[]);
 app.controller("log",['$scope','$http',function ($scope,$http) {
@@ -181,6 +184,37 @@ app.controller("em",['$scope', '$http', function ($scope, $http) {
 	$scope.deleteEm = function (id) {
 		$http.post("index.php/deleteEm/"+$scope.empresas[id].id)
 		.success(function (dat) {
+			$scope.empInfo();
+		})
+		.error(function (err) {
+			console.log(err);
+		});	
+	}
+	$scope.newEmpresa = function () {
+		$scope.name 	= "";
+		$scope.domi 	= "";
+		$scope.cp		= "";
+		$scope.mun		= "";
+		$scope.email	= "";
+		$scope.tel		= "";
+		$scope.name_en	= "";
+		$scope.cargo	= "";
+		$scope.email_en	= "";
+	}
+	$scope.EmSave = function () {
+		$http.post("index.php/EmSave",{
+			name 	: $scope.name,
+			domi 	: $scope.domi,
+			cp		: $scope.cp,
+			mun 	: $scope.mun,
+			email 	: $scope.email,
+			tel 	: $scope.tel,
+			name_en : $scope.name_en,
+			cargo	: $scope.cargo,
+			email_en: $scope.email_en
+		})
+		.success(function (dat) {
+			console.log(dat);
 			$scope.empInfo();
 		})
 		.error(function (err) {

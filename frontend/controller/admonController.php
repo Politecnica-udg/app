@@ -116,5 +116,9 @@
 			global $url_array;
 			return jsonResponse($this->data->deleteEm($url_array[2]));
 		}
+		public function EmSave(){
+			$dat = jsonPOST();
+			return jsonResponse($this->data->EmSave($dat));
+		}
 	}
 ?>
