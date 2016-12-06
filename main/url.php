@@ -42,7 +42,8 @@
 		"quitAl"		=> "admon.quitAl",
 		"deleteEm"		=> "admon.deleteEm",
 		"vinculacion"	=> "studen.vinculacion",
-		"EmSave"		=> "admon.EmSave"
+		"EmSave"		=> "admon.EmSave",
+		"SaveSo"		=> "admon.SaveSo"
 	];
 	patterns($URLpatterns);
 ?>

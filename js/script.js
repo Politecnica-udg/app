@@ -263,6 +263,29 @@ app.controller("soliEm",['$scope', '$http', function ($scope, $http) {
 		})
 		.error(function (err) {
 			console.log(err);
+		});			
+	}
+	$scope.newPlaza = function () {
+		$scope.id_soli	= "";
+		$scope.carr		= "";
+		$scope.act 		= "";
+		$scope.apoyo	= "";
+		$scope.sexo_em 	= "";
+	}
+	$scope.SaveSo = function (em) {
+		$http.post("index.php/SaveSo",{
+			carr	: $scope.carr,
+			act 	: $scope.act,
+			apoyo	: $scope.apoyo,
+			sexo_em	: $scope.sexo_em,
+			emp 	: em
+		})
+		.success(function (dat) {
+			$scope.soliIn(em);
+			console.log(dat);
+		})
+		.error(function (err) {
+			console.log(err);
 		});
 				
 	}

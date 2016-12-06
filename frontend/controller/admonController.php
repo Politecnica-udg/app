@@ -120,5 +120,9 @@
 			$dat = jsonPOST();
 			return jsonResponse($this->data->EmSave($dat));
 		}
+		public function SaveSo(){
+			$dat = jsonPOST();
+			return jsonResponse($this->data->SaveSo($dat));
+		}
 	}
 ?>
