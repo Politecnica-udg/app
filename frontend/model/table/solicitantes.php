@@ -56,6 +56,9 @@
 			return $this->mysql->query("INSERT INTO solicitantes (carr, act, apoyo, sexo_em, em)
 										VALUES ('$dat[carr]', '$dat[act]', '$dat[apoyo]', '$dat[sexo_em]', '$dat[emp]')");
 		}
+		public function delePl($id){
+			return $this->mysql->query("DELETE FROM solicitantes WHERE id = '$id';");
+		}
 		function __destruct(){
 			$this->mysql->close();
 		}

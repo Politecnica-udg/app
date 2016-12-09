@@ -282,7 +282,16 @@ app.controller("soliEm",['$scope', '$http', function ($scope, $http) {
 		})
 		.success(function (dat) {
 			$scope.soliIn(em);
+		})
+		.error(function (err) {
+			console.log(err);
+		});		
+	}
+	$scope.quit = function (id, em) {
+		$http.post("index.php/delePl/"+id)
+		.success(function (dat) {
 			console.log(dat);
+			$scope.soliIn(em);
 		})
 		.error(function (err) {
 			console.log(err);

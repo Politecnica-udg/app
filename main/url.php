@@ -43,7 +43,8 @@
 		"deleteEm"		=> "admon.deleteEm",
 		"vinculacion"	=> "studen.vinculacion",
 		"EmSave"		=> "admon.EmSave",
-		"SaveSo"		=> "admon.SaveSo"
+		"SaveSo"		=> "admon.SaveSo",
+		"delePl"		=> "admon.delePl"
 	];
 	patterns($URLpatterns);
 ?>
