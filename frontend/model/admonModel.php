@@ -85,5 +85,9 @@
 			$consu = new solicitantes();
 			return $consu->SaveSo($dat);
 		}
+		public function delePl($id){
+			$consu = new solicitantes();
+			return $consu->delePl($id);
+		}
 	}
 ?>

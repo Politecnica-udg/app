@@ -124,5 +124,9 @@
 			$dat = jsonPOST();
 			return jsonResponse($this->data->SaveSo($dat));
 		}
+		public function delePl(){
+			global $url_array;
+			return jsonResponse($this->data->delePl($url_array[2]));
+		}
 	}
 ?>
