@@ -13,7 +13,7 @@
 		}
 		public function info($mat){
 			$consu = new cali();
-			return $consu->getInfo($sem);
+			return $consu->getInfo($mat);
 		}
 		public function grabar($data,$array){
 			$consu = new cali();
