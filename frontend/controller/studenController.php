@@ -133,13 +133,9 @@
 			$pdf->Cell(15,4,'Cargo: '.$dat['cargo'],0,2);
 			$pdf->Ln();
 			$pdf->SetFont('Arial','',10);
-			$pdf->MultiCell(160,4, utf8_decode("Agradecemos la oportunidad brindada por su empresa al concedernos plazas para los alumnos de la Escuela Politécnica Guadalajara, estamos seguros que los educandos al tener la oportunidad de estar en contacto con el campo en el ejercicio profesional a fin a su carrera, lograran la retroalimentación del conocimiento que los llevara al aprendizaje significativo."),0,'J');
+			$pdf->MultiCell(160,4, utf8_decode("Agradecemos la oportunidad brindada por su empresa al concedernos plazas para los alumnos de la Escuela Politécnica Guadalajara, estamos seguros que los educandos al tener la oportunidad de estar en contacto con el campo en el ejercicio profesional afín a su carrera, lograrán la retroalimentación del conocimiento que los llevará al aprendizaje significativo."),0,'J');
 			$pdf->Ln();
 			$pdf->MultiCell(160,4, utf8_decode("Aprovechamos el comunicado para informarles que en el mes de marzo o abril, se aplica la Prueba Planea, en las instalaciones de la Escuela Politécnica Guadalajara, la cual es OBLIGATORIA para todos los alumnos de octavo semestre. Por lo que solicitamos se les permita ausentarse de sus labores durante los días que se aplique dicha prueba."),0,'J');
-			$pdf->Ln();
-			$pdf->MultiCell(160,4, utf8_decode("De acuerdo al Trayecto Formativo de algunas de la carreras (TPEI, TPMI,  TPPL, TPPQI y TPSI), los estudiantes deberán cursar algunas Unidades de Aprendizaje, parte de su carga horaria de octavo semestre; mismas que se impartirán los días sábados.(CHECAR SI EFECTIVAMENTE SE REALIZARAN EN SABADO LAS UA FALTANTES DE LA CARGA HORARIA)"),0,'J');
-			$pdf->Ln();
-			$pdf->MultiCell(160,4, utf8_decode("Cabe señalar que el periodo vacacional de primavera para los alumnos, comprende los días nueve de abril al 23 de abril de 2017."),0,'J');
 			$pdf->Ln();
 			$pdf->MultiCell(160,4, utf8_decode("El C.".$_SESSION['nombre'].", es el estudiante asignado a su empresa para la realización de las  Prácticas Profesionales, las cuales inician el 23 de febrero al ".$dat['dia_fin']." de mayo de 2017 con una carga de ".$dat['horas']."hrs totales, asistiendo de lunes a viernes cuatro horas diarias; la asignación de horario será determinado por la empresa en acuerdo con el alumno."),0,'J');
 			$pdf->Ln();
@@ -200,8 +196,10 @@
 			$pdf->Ln();
 			$pdf->Ln();
 			$pdf->Ln();
+			$pdf->Ln();
 			$pdf->Cell(25,4,utf8_decode("Gilberto Simón Guevara Galindo"),0,1);
 			$pdf->Cell(25,4,utf8_decode("Coordinador de Carrera"),0,1);
+			$pdf->Ln();
 			$pdf->Output();
 		}
 	}

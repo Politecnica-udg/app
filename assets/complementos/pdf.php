@@ -61,5 +61,12 @@
 			$this->Cell(55,5,"COORDINACION DE CARRERA",0,2);
 			$this->Cell(55,5,"VINCULACION",0,2);
 		}
+		public function Footer(){
+			$this->SetFont('Arial','I',7);
+			$this->Cell(0,3,utf8_decode("Av. Revolución No. 1500, Sector Reforma, C.P. 44420"),0,2,'C');
+			$this->Cell(0,3,utf8_decode("Guadalajara, Jalisco, México. Tel. fax. (33) 36199814/36198315 Ext. 120"),0,2,"C");
+			$this->SetFont('Arial','B',7);
+			$this->Cell(0,3,utf8_decode("http://politécnica.sems.udg.mx"),0,2,"C");
+		}
 	}
 ?>
