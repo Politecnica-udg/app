@@ -192,7 +192,7 @@
 			$pdf->Ln();
 			$pdf->Cell(25,4,utf8_decode("A t e n t a m e n t e"),0,1);
 			$pdf->Cell(25,4,utf8_decode("\"Piensa y Trabaja\""),0,1);
-			$pdf->Cell(25,4,utf8_decode("Guadalajara, Jalisco a ".date("d")." de ".date("m")." de ".date("Y")."."),0,1);
+			$pdf->Cell(25,4,utf8_decode("Guadalajara, Jalisco a ".date("d")." de Enero de ".date("Y")."."),0,1);
 			$pdf->Ln();
 			$pdf->Ln();
 			$pdf->Ln();
