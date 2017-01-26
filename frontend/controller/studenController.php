@@ -126,8 +126,14 @@
 			foreach ($d as $key => $value) {
 				$dat = $this->data->infoRepo($value['codigo_a']);
 				$pdf->AddPage();
-				$pdf->SetMargins(37,5);
 				$pdf->SetFont('Arial','B',9);
+				$pdf->Cell(20,4,".",0,2);
+				$pdf->Ln();
+				$pdf->Ln();
+				$pdf->Ln();
+				$pdf->Ln();
+				$pdf->Ln();
+				$pdf->Ln();
 				$pdf->Ln();
 				$pdf->Cell(20,4,'Empresa: '.$dat['name_e'],0,2);
 				$pdf->Cell(32,4,'Representante: '.$dat['name_en'],0,2);
