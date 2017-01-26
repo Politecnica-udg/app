@@ -56,7 +56,9 @@
 		public function listaCartas(){
 			$query = $this->mysql->query("SELECT codigo_a FROM alumnos_datos WHERE datos_c != 0 AND em_codigo != 0; ");
 			while ($reg=$query->fetch_array()){
+				if ($reg['codigo_a'] != "") {
 					$data[] = $reg;
+				}		
 			}
       		return $data;
 		}
