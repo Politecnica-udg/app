@@ -137,7 +137,7 @@
 			$pdf->Ln();
 			$pdf->MultiCell(160,4, utf8_decode("Aprovechamos el comunicado para informarles que en el mes de marzo o abril, se aplica la Prueba Planea, en las instalaciones de la Escuela Politécnica Guadalajara, la cual es OBLIGATORIA para todos los alumnos de octavo semestre. Por lo que solicitamos se les permita ausentarse de sus labores durante los días que se aplique dicha prueba."),0,'J');
 			$pdf->Ln();
-			$pdf->MultiCell(160,4, utf8_decode("El C.".$_SESSION['nombre'].", es el estudiante asignado a su empresa para la realización de las  Prácticas Profesionales, las cuales inician el 23 de febrero al ".$dat['dia_fin']." de mayo de 2017 con una carga de ".$dat['horas']."hrs totales, asistiendo de lunes a viernes cuatro horas diarias; la asignación de horario será determinado por la empresa en acuerdo con el alumno."),0,'J');
+			$pdf->MultiCell(160,4, utf8_decode("El C.".$_SESSION['nombre'].", es el estudiante asignado a su empresa para la realización de las Prácticas Profesionales, las cuales inician el 23 de febrero al ".$dat['dia_fin']." de mayo de 2017 con una carga de ".$dat['horas']."hrs. totales, asistiendo de lunes a viernes cuatro horas diarias; la asignación de horario será determinado por la empresa en acuerdo con el alumno."),0,'J');
 			$pdf->Ln();
 			$pdf->SetFillColor(192, 192, 192);
 			$pdf->Cell(160,5,utf8_decode("DATOS ESCOLARES"),1,2,'C',true);
