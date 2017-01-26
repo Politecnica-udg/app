@@ -148,7 +148,7 @@
 			$pdf->Cell(35,5,utf8_decode("Carrera"),1,0,'R',true);
 			$pdf->Cell(125,5,utf8_decode($dat['nom_car']),1,1,'C');
 			$pdf->Cell(35,5,utf8_decode("Grado"),1,0,'R',true);
-			$pdf->Cell(25,5,utf8_decode("7"),1,0,'C');
+			$pdf->Cell(25,5,utf8_decode("8"),1,0,'C');
 			$pdf->Cell(25,5,utf8_decode("Grupo"),1,0,'R',true);
 			$pdf->Cell(25,5,utf8_decode($dat['gpo_ubi']),1,0,'C');
 			$pdf->Cell(25,5,utf8_decode("Turno"),1,0,'R',true);
