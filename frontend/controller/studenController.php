@@ -180,13 +180,13 @@
 			$pdf->Cell(25,5,utf8_decode("Mexicana"),1,1,'C');
 			$pdf->Cell(160,5,utf8_decode("DATOS FAMILIARES"),1,1,'C',true);
 			$pdf->Cell(35,5,utf8_decode("Nombre del padre"),1,0,'R',true);
-			$pdf->Cell(75,5,utf8_decode($dat['name_p']),1,0,'C');
-			$pdf->Cell(25,5,utf8_decode("Teléfono"),1,0,'R',true);
-			$pdf->Cell(25,5,utf8_decode($dat['telc_p']),1,1,'C');
-			$pdf->Cell(35,5,utf8_decode("Nombre de la madre"),1,0,'R',true);
 			$pdf->Cell(75,5,utf8_decode($dat['name_o']),1,0,'C');
 			$pdf->Cell(25,5,utf8_decode("Teléfono"),1,0,'R',true);
 			$pdf->Cell(25,5,utf8_decode($dat['telc_o']),1,1,'C');
+			$pdf->Cell(35,5,utf8_decode("Nombre de la madre"),1,0,'R',true);
+			$pdf->Cell(75,5,utf8_decode($dat['name_p']),1,0,'C');
+			$pdf->Cell(25,5,utf8_decode("Teléfono"),1,0,'R',true);
+			$pdf->Cell(25,5,utf8_decode($dat['telc_p']),1,1,'C');
 			$pdf->Ln();
 			$pdf->MultiCell(160,4, utf8_decode("Sin otro particular, me despido de usted reiterándole mi más atenta y distinguida consideración."),0,'J');
 			$pdf->Ln();
