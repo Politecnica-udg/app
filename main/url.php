@@ -44,7 +44,8 @@
 		"vinculacion"	=> "studen.vinculacion",
 		"EmSave"		=> "admon.EmSave",
 		"SaveSo"		=> "admon.SaveSo",
-		"delePl"		=> "admon.delePl"
+		"delePl"		=> "admon.delePl",
+		"listaCartas"	=> "studen.listaCartas"
 	];
 	patterns($URLpatterns);
 ?>

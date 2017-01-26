@@ -53,6 +53,13 @@
 			if ($reg=$query->fetch_array())
       			return $reg;
 		}
+		public function listaCartas(){
+			$query = $this->mysql->query("SELECT codigo_a FROM alumnos_datos WHERE datos_c != 0 AND em_codigo != 0; ");
+			while ($reg=$query->fetch_array()){
+					$data[] = $reg;
+			}
+      		return $data;
+		}
 		function __destruct(){
 			$this->mysql->close();
 		}
