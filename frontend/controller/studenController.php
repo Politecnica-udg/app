@@ -142,9 +142,9 @@
 			$pdf->SetFillColor(192, 192, 192);
 			$pdf->Cell(160,5,utf8_decode("DATOS ESCOLARES"),1,2,'C',true);
 			$pdf->Cell(35,5,utf8_decode("Código"),1,0,'R',true);
-			$pdf->Cell(125,5,utf8_decode($_SESSION['codigo']),1,1,'C');
+			$pdf->Cell(125,5,utf8_decode($_dat['codigo_a']),1,1,'C');
 			$pdf->Cell(35,5,utf8_decode("Nombre"),1,0,'R',true);
-			$pdf->Cell(125,5,utf8_decode($_SESSION['nombre']),1,1,'C');
+			$pdf->Cell(125,5,utf8_decode($_dat['name']),1,1,'C');
 			$pdf->Cell(35,5,utf8_decode("Carrera"),1,0,'R',true);
 			$pdf->Cell(125,5,utf8_decode($dat['nom_car']),1,1,'C');
 			$pdf->Cell(35,5,utf8_decode("Grado"),1,0,'R',true);
