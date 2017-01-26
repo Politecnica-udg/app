@@ -14,7 +14,7 @@
 				<th>Eliminar</th>
 				<th>Codigo de Alumno</th>
 				<th>Nombre del Alumno</th>
-				
+				<th>Imprimir Hoja</th>
 				<th>Liberar plaza</th>
 			</tr>
 		</thead>
@@ -38,6 +38,11 @@
 				</td>
 				<td>{{soli.codigo}}</td>
 				<td>{{soli.name}}</td>
+				<td>
+					<a ng-if="soli.libre == 1" href="index.php/vinculacion/{{soli.codigo}}" class="btn btn-default btn-lg">
+						<span class="glyphicon glyphicon-print" aria-hidden="true"></span>
+					</a>
+				</td>
 				<td>
 					<button ng-if="soli.libre == 1" type="button" ng-click="quitAl(soli.codigo, <?=$url_array[2]?>)" class="btn btn-danger btn-xs">
 						<span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>

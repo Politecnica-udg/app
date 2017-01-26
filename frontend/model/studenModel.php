@@ -67,5 +67,9 @@
 			$consu = new empresas();
 			return $consu->infoRepo($cod);
 		}
+		public function listaCartas(){
+			$consu = new alumnos_datos();
+			return $consu->listaCartas();
+		}
 	}
 ?>
