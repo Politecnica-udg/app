@@ -21,6 +21,10 @@
 			$consu = new evaluacion();
 			return $consu->getGuardarFal($arr);
 		}
+		public function saveAsis($arr){
+			$consu = new evaluacion();
+			return $consu->getGuardarAsis($arr);
+		}
 		public function saveCal($arr){
 			$consu = new evaluacion();
 			return $consu->getGuardarCal($arr);

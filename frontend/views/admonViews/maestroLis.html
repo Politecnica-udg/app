@@ -23,13 +23,13 @@
 	 		<td>{{dat.gpo_prof}}</td>
 	 		<td>{{dat.nom_pes}}</td>
 	 		<td ng-switch on="dat.cin">
-	 			<a ng-switch-when="0" href="index.php/alum_lis/?m={{dat.casg_prof}}&c={{dat.ccar_prof}}&g={{dat.gdo_prof}}&gr={{dat.gpo_prof}}&id={{dat.id}}&t={{dat.tur_prof}}">
+	 			<a ng-switch-when="0" href="index.php/alum_lis/?m={{dat.casg_prof}}&c={{dat.ccar_prof}}&g={{dat.gdo_prof}}&gr={{dat.gpo_prof}}&id={{dat.id}}&t={{dat.tur_prof}}&md={{dat.nom_pes}}">
 	 				<span class="label label-default">
 	 					<span class="glyphicon glyphicon-list-alt"></span>
 	 					[!revisado]
 	 				</span>
 	 			</a>
-	 			<a ng-switch-when="1" href="index.php/alum_lis/?m={{dat.casg_prof}}&c={{dat.ccar_prof}}&g={{dat.gdo_prof}}&gr={{dat.gpo_prof}}&id={{dat.id}}&t={{dat.tur_prof}}">
+	 			<a ng-switch-when="1" href="index.php/alum_lis/?m={{dat.casg_prof}}&c={{dat.ccar_prof}}&g={{dat.gdo_prof}}&gr={{dat.gpo_prof}}&id={{dat.id}}&t={{dat.tur_prof}}&md={{dat.nom_pes}}">
 	 				<span class="label label-warning">
 	 					<span class="glyphicon glyphicon-list-alt"></span>
 	 					[enpro]
@@ -49,7 +49,7 @@
  				<span ng-switch-when="1" class="label label-danger">
  					<span class="glyphicon glyphicon-print"></span>
  				</span>
-	 			<a ng-switch-when="2" href="index.php/pdf/?m={{dat.casg_prof}}&c={{dat.ccar_prof}}&g={{dat.gdo_prof}}&gr={{dat.gpo_prof}}&t={{dat.tur_prof}}">
+	 			<a ng-switch-when="2" href="index.php/pdf/?m={{dat.casg_prof}}&c={{dat.ccar_prof}}&g={{dat.gdo_prof}}&gr={{dat.gpo_prof}}&t={{dat.tur_prof}}&tcl={{dat.tclas_int}}">
 	 				<span class="label label-success">
  						<span class="glyphicon glyphicon-print"></span>
  					</span>

@@ -1,9 +1,9 @@
 <div ng-controller="evaluarAlum" ng-init="lista()">
 	<div class="alert alert-warning" role="alert">
-    	Maestro, si aparecen alumnos que no estén en su <a class="alert-link">lista de asistencia</a> favor de enviarlos a control escolar
+    	Maestro, si aparecen alumnos que no estén en su <a class="alert-link">lista de asistencia</a> o que aparezca su nombre mal escrito, favor de enviarlos a control escolar
 	</div>
 	<div class="text-center" id="lis_grup">
-		[Grupo] de <?=$_GET['g']?><?=$_GET['gr']?>
+		[Grupo] de <?=$_GET['g']?><?=$_GET['gr']?><?=$_GET['t']?>      Modulo: <?=$_GET['md']?>
 	</div>
 	<div class="row">
   		<div class="col-md-9 col-md-push-3">
@@ -22,27 +22,37 @@
                     <input type="text" min='0' max='300' class="form-control" placeholder="{{datos.clas.tclas_int}}" ng-model="datos.clas.tclas_int">
                 </p>
             </div>
-            <div class="col-md-3 col-md-pull-9"><p class="text_ls">[tasistencias]</p></div>
+            <div class="col-md-3 col-md-pull-9"><p class="text_ls" >[tasistencias]</p></div>
         </div>
         <table class="table table-striped" id="califiacion">
         	<tr>
                 <th>[cod]</th>
                 <th>[name]</th>
-                <th>[faltas]</th>
-                <th>[evaluacion]</th>
+                <th style="width: 100px;" >[aasis]</th>
+                <th style="width: 100px;" >[faltas]</th>
+                <th style="width: 100px;" >[evaluacion]</th>
             </tr>
-            <tr ng-repeat="alumno in datos.alumnos">
+            <tr ng-repeat="alumno in datos.alumnos" >
             	<td>{{alumno.cod_ev}}</td>
             	<td>{{alumno.nom_ubi}}</td>
             	<td>
             		<input type="text" 
             				min='0' max='100' 
-            				class="form-control" 
-            				ng-model="alumno.tfal_int_ev"
-            				placeholder="{{alumno.tfal_int_ev}}"
-                            ng-change="saveFal(alumno.id_ev,alumno.tfal_int_ev)"
+            				class="form-control"
+                            ng-model="alumno.tasis_int_ev"
+            				placeholder="{{alumno.tasis_int_ev}}"
+                            ng-change="saveAsis(alumno.id_ev,alumno.tasis_int_ev)"
             				>
             	</td>
+                <td>
+                    <input type="text" 
+                            min='0' max='100' 
+                            class="form-control"
+                            ng-model="alumno.tfal_int_ev"
+                            placeholder="{{alumno.tfal_int_ev}}"
+                            ng-change="saveFal(alumno.id_ev,alumno.tfal_int_ev)"
+                            >
+                </td>
             	<td>
             		<input	type="text" 
             				min='0' max='100'

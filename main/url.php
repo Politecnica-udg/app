@@ -45,7 +45,8 @@
 		"EmSave"		=> "admon.EmSave",
 		"SaveSo"		=> "admon.SaveSo",
 		"delePl"		=> "admon.delePl",
-		"listaCartas"	=> "studen.listaCartas"
+		"listaCartas"	=> "studen.listaCartas",
+		"saveAsis"		=> "admon.saveAsis"
 	];
 	patterns($URLpatterns);
 ?>

@@ -9,7 +9,7 @@
 		}
 		public function getDatosAlu(){
 			global $conf_poli;
-			$query = $this->mysql->query(" SELECT DISTINCT id_ev, cod_ev,nom_ubi,cal_int_ev,tfal_int_ev, tclas_int_ev  FROM evaluacion INNER JOIN ubicacion ON calu_ubi=cod_ev WHERE ciclo = '$conf_poli[cal_prof]' and car_ev = '$_GET[c]' and gdo_ev = '$_GET[g]' and tno_ev='$_GET[t]'  and  gpo_ev = '$_GET[gr]' and asig_ev = '$_GET[m]' ORDER BY nom_ubi ");
+			$query = $this->mysql->query(" SELECT DISTINCT id_ev, cod_ev,nom_ubi,cal_int_ev, tfal_int_ev, tasis_int_ev, tclas_int_ev  FROM evaluacion INNER JOIN ubicacion ON calu_ubi=cod_ev WHERE ciclo = '$conf_poli[cal_prof]' and car_ev = '$_GET[c]' and gdo_ev = '$_GET[g]' and tno_ev='$_GET[t]'  and  gpo_ev = '$_GET[gr]' and asig_ev = '$_GET[m]' ORDER BY nom_ubi ");
 			while ($reg=$query->fetch_array())
       			$data[] = $reg;
       		return $data;
@@ -17,8 +17,11 @@
 		public function getGuardarFal($value){
 			$this->mysql->query("UPDATE evaluacion SET tfal_int_ev='$value[fal]', tclas_int_ev = '$value[cTotal]' WHERE id_ev = '$value[id_al]'");
 		}
+		public function getGuardarAsis($value){
+			$this->mysql->query("UPDATE evaluacion SET tasis_int_ev='$value[asis]', tclas_int_ev = '$value[cTotal]' WHERE id_ev = '$value[id_al]'");
+		}
 		public function getGuardarCal($value){
-			$this->mysql->query("UPDATE evaluacion SET cal_int_ev='$value[cal]' WHERE id_ev = '$value[id_al]'");
+			$this->mysql->query("UPDATE evaluacion SET cal_int_ev='$value[cal]', tclas_int_ev = '$value[cTotal]'WHERE id_ev = '$value[id_al]'");
 		}
 		public function getCarrera($con){
 			$query = $this->mysql->query("SELECT nom_car FROM carreras WHERE ccar_car = '$con' ");
@@ -32,7 +35,7 @@
 		}
 		public function getGrupo(){
 			global $conf_poli;
-			$query = $this->mysql->query(" SELECT DISTINCT cod_ev,nom_ubi,cal_int_ev,tfal_int_ev, tclas_int_ev  FROM evaluacion INNER JOIN ubicacion ON calu_ubi=cod_ev WHERE ciclo = '$conf_poli[cal_prof]' and car_ev = '$_GET[c]' and gdo_ev = '$_GET[g]' and  tno_ev='$_GET[t]' and gpo_ev = '$_GET[gr]' and asig_ev = '$_GET[m]' and tno_ev='$_GET[t]' ORDER BY nom_ubi ");
+			$query = $this->mysql->query(" SELECT DISTINCT cod_ev,nom_ubi,cal_int_ev,tasis_int_ev,tfal_int_ev, tclas_int_ev  FROM evaluacion INNER JOIN ubicacion ON calu_ubi=cod_ev WHERE ciclo = '$conf_poli[cal_prof]' and car_ev = '$_GET[c]' and gdo_ev = '$_GET[g]' and  tno_ev='$_GET[t]' and gpo_ev = '$_GET[gr]' and asig_ev = '$_GET[m]' and tno_ev='$_GET[t]' ORDER BY nom_ubi ");
 			while ($reg=$query->fetch_array())
       			$data[] = $reg;
       		return $data;

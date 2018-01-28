@@ -86,6 +86,14 @@ app.controller("evaluarAlum",['$scope', '$http', function ($scope, $http) {
 			console.log(err);
 		});
 	}
+	$scope.saveAsis = function (id,asis_al) {
+		$http.get("index.php/saveAsis?id_al="+id+"&asis="+asis_al+"&cTotal="+$scope.datos.clas.tclas_int)
+		.success(function (dato) {
+		})
+		.error(function (err) {
+			console.log(err);
+		});
+	}
 	$scope.saveCal = function (id,cal_al) {
 		if(cal_al >100){
 			alert("Tiene que ser un numero menor o igual a 100");
@@ -100,7 +108,7 @@ app.controller("evaluarAlum",['$scope', '$http', function ($scope, $http) {
 	}
 	$scope.grabar = function(op_m){
 		url = window.location.search;
-		$http.get("index.php/grabarM/"+url+"&op="+op_m+"&fal="+$scope.datos.clas)
+		$http.get("index.php/grabarM/"+url+"&op="+op_m+"&fal="+$scope.datos.clas.tclas_int)
 		.success(function(dato){
 			console.log(dato);
 			alert("Datos Grabados");
